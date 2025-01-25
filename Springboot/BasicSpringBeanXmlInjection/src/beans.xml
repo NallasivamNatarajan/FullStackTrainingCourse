@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="employeeAddress1" class="com.htc.demo.entity.Address"
+		scope="prototype">
+		<property name="city" value="Vellore" />
+		<property name="pincode" value="632517" />
+	</bean>
+	<bean id="employeeAddress2" class="com.htc.demo.entity.Address"
+		scope="singleton">
+		<constructor-arg name="city" value="Chennai" />
+		<constructor-arg name="pincode" value="600028" />
+	</bean>
+	<bean id="employee1" class="com.htc.demo.entity.Employee">
+		<property name="employeeId" value="1" />
+		<property name="employeeName" value="Nallasivam" />
+		<property name="email" value="nsivam@gmail.com" />
+		<property name="address" ref="employeeAddress1" />
+	</bean>
+	<bean id="employee2" class="com.htc.demo.entity.Employee">
+		<property name="employeeId" value="2" />
+		<property name="employeeName" value="Siva" />
+		<property name="email" value="siva@gmail.com" />
+		<property name="address" ref="employeeAddress2" />
+	</bean>
+	<bean id="employee3" class="com.htc.demo.entity.Employee">
+		<property name="employeeId" value="3" />
+		<property name="employeeName" value="SivaKarthi" />
+		<property name="email" value="siva2@gmail.com" />
+		<property name="address" ref="employeeAddress2" />
+	</bean>
+</beans>

@@ -1,0 +1,5 @@
+
+<app-base [existingDataReceived]='existingInfo' (newItemEvent)="addNewItem($event)"></app-base>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>

@@ -1,0 +1,70 @@
+<div *ngIf="productMaster" style="margin-left: 10px">
+        
+    <button (click)="productList()"><mat-icon>chevron_left</mat-icon>{{productMaster.productName}}</button>
+    <br>
+    <div style="display: flex">
+        <div>
+            <img src="./assets/productimage.png" alt="Product Image" style="height:300px; width:300px; margin-left: 10px" />
+        </div>
+        <div style="padding: 10px 10px 20px 10px; width: 600px">
+            <table style="height:300px; width:600px; margin-left: 10px" class="table table-hover table-border" border="1px">
+                <tr>
+                    <th>
+                        <label>
+                            <b>Name</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.productName}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Category</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.category}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Type</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.type}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Length</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.length}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Dia (mm)</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.dia}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Drive Size</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.driveSize}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Description</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.description}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

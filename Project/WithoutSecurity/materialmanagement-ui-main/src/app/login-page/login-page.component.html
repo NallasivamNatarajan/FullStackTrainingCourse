@@ -1,0 +1,70 @@
+<div class="main-container">
+  <header class="mt-4">
+    <img src="../../assets/images/images/KIA_LOGO.png" alt="" height="45px" /><span
+      class="brand-text"
+      >Movement that inspires</span>
+  </header>
+
+  <div class="main-content border rounded">
+    <div class="left-box" style="background-color: #aaa">
+      <img src="../../assets/images/images/car-img.jpg" alt="" class="car-img-n" />
+    </div>
+
+    <div class="right-box">
+
+      <div class="right-content w-50">
+        <div *ngIf="invalidMessage.length>0">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{invalidMessage}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+
+        <h6 class="sign-text">SIGN IN TO YOUR ACCOUNT</h6>
+        <form class="mt-4" #loginForm="ngForm" (submit)="loginSubmit(loginForm)">
+          <div class="form-group">
+            <label for="username">Employee ID </label>
+            <input type="text" class="form-control" id="username" name="username" ngModel />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" ngModel/>
+            <div class="row pass-links">
+              <div class="col-md-6">
+                <a href="">Reset Password</a>
+              </div>
+              <div class="col-md-6">
+                <a href="">Forgot Password</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="account pt-4">
+            <p>Do you have an account? <a routerLink="/placeorder">Sign Up</a></p>
+            <button type="submit" class="btn btn-dark btn-sm btn-submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="terms text-center">
+        <p>
+          By clicking sign in, you agree to our
+          <a href="">Terms & Conditions</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <ul>
+      <li><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;Helpline number : <b>+91 9989220023</b></li>
+      <li>Fire : <b>+1 (317) 327-6041</b></li>
+      <li>Security : <b>+91 9989220023</b></li>
+    </ul>
+  </div>
+
+</div>

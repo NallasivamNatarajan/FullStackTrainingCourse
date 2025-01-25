@@ -1,0 +1,174 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <br />
+    <mat-nav-list>
+      &nbsp;
+      <mat-list-item
+        class="list"
+        routerLink="dashboard"
+        *ngIf="isSupervisor() || isShift() || isAdmin()"
+      >
+        <mat-icon class="list-icon">dashboard</mat-icon>&nbsp;
+        <p class="side-main">DashBoard</p></mat-list-item
+      >
+      <mat-list-item
+        class="list"
+        routerLink="/dashboard"
+        *ngIf="isSupervisor() || isShift() || isAdmin()"
+      >
+        <mat-icon class="list-icon">domain</mat-icon> &nbsp;
+        <p class="side-main">Assembly Line</p>
+      </mat-list-item>
+      <mat-list-item
+        class="list"
+        routerLink="/dashboard"
+        *ngIf="isSupervisor() || isShift() || isAdmin()"
+      >
+        <mat-icon class="list-icon">brightness_7</mat-icon>&nbsp;
+        <p class="side-main">Trial Management</p></mat-list-item
+      >
+    </mat-nav-list>
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            <mat-icon class="list-icon">category</mat-icon>&nbsp; Material
+            Management &nbsp;&nbsp;&nbsp;
+            <mat-icon id="expand">expand_more</mat-icon>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul>
+          <li *ngIf="isShift()">
+            <a *ngIf="!isSupervisor()"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="to-do"
+              routerLinkActive="selected"
+            >
+              <span class="title">To Do</span>
+            </a>
+          </li>
+
+          <li *ngIf="isAdmin()">
+            <a *ngIf="!isSupervisor()"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="admin-list"
+              routerLinkActive="selected"
+            >
+              <span class="title">To Do</span>
+            </a>
+          </li>
+
+          <li *ngIf="isSupervisor()">
+            <a
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="place-order"
+              routerLinkActive="selected"
+            >
+              <span class="title">Place Order</span></a
+            >
+          </li>
+
+          <li *ngIf="isSupervisor()">
+            <a
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink="my-orders"
+              routerLinkActive="selected"
+            >
+              <span class="title">My Orders</span></a
+            >
+          </li>
+
+          <mat-accordion *ngIf="isSupervisor()">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="title"
+                  >New Product Request&nbsp;&nbsp;
+                  <mat-icon id="expand">expand_more</mat-icon>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li>
+                  <a
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    routerLink="view-products"
+                    routerLinkActive="selected"
+                  >
+                    <span class="title">View Product</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    routerLink="new-product-request"
+                    routerLinkActive="selected"
+                  >
+                    <span class="title">Add New Product</span></a
+                  >
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+        </ul>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+
+  <!-- Main Content  for data  -->
+  <mat-sidenav-content>
+    <div style="height: 100vh">
+      <mat-toolbar>
+        <mat-toolbar-row class="row1">
+          <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon></button
+          >&nbsp;
+          <img
+            class="logo"
+            src="/assets/img/KiaLogo.jpg"
+            alt="KIA Logo"
+            widht="50"
+            height="40"
+          />&nbsp;&nbsp;
+          <h3>|</h3>
+          &nbsp;&nbsp;
+          <h6>Assembly Management Sysytem</h6>
+          <span class="menu-spacer"></span>
+          <div class="menu-bar">
+         <a routerLink="cart">
+            <img
+              class="menu-icon"
+              src="/assets/img/cart3.svg"
+              routerLink="/home/cart"
+              alt="cart"
+              widht="30"
+              height="30"
+            /><mat-icon *ngIf="isCart" matBadgeColor="danger" style="color: rgb(179, 49, 49);font-size: 14px;">circle</mat-icon></a>
+
+            &nbsp;
+            <a>
+              <img
+                class="menu-icon"
+                src="/assets/img/bell.svg"
+                alt="bell"
+                widht="30"
+                height="30"
+              /> </a
+            >&nbsp;
+            <a routerLink="/" style="text-decoration: none;color: black;">
+              <span style="font-size: 12px;">{{username}}</span> &nbsp;<img
+                class="menu-icon"
+                src="/assets/img/person-circle.svg"
+                alt="person"
+                widht="30"
+                height="30"
+              />
+            </a>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="pl-2">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

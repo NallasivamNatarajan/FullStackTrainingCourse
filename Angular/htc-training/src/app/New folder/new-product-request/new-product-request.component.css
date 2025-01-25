@@ -1,0 +1,18 @@
+.reactive-form{
+    width: 85%;
+    margin-left: 10%;
+    padding: 10px 10px 10px 10px;
+}
+.alert{
+    padding: 0px;
+    position: relative;
+}
+.form-control{
+    width: 30%;
+}
+.form-select{
+    width: 30%;
+}
+.product-name{
+    width: 60%;
+}

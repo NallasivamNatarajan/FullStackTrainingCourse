@@ -1,0 +1,190 @@
+<div class="main-container">
+  <!-- <header class="mt-1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <a class="navbar-brand pl-3" href="#">
+        <img
+          src="./../../../assets/images/KIA_LOGO.png"
+          alt=""
+          height="45px"
+        /><span class="brand-text">Assembly Management System</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto pr-5">
+          <li class="nav-item active pr-5">
+            <a class="nav-link" routerLink="/login"
+              ><i class="fa-solid fa-cart-shopping fass"></i
+            >(Login)</a>
+          </li>
+          <li class="nav-item active pr-5">
+            <a class="nav-link" routerLink="/cart"
+              ><i class="fa-regular fa-bell fass"></i
+            ></a>
+          </li>
+          <li class="nav-item active pr-5">
+            <a class="nav-link" href="#"
+              ><i class="fa-regular fa-circle-user fass"></i
+              >&nbsp;&nbsp;&nbsp;User&nbsp;&nbsp;&nbsp;<i
+                class="fa-solid fa-caret-down"
+              ></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header> -->
+
+  <div class="main-content">
+    <!-- horizontal-nav START -->
+    <div class="horizontal-nav">
+       <ul class="nav" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link assembly-active" href="/dashboard"  data-toggle="pill"
+         id="assembly-line-tab"
+            data-target="#assembly-line"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="false">Assembly Line</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/dashboard" data-toggle="pill"
+      id="trial-management-tab"
+            data-target="#trial-management"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false">Trial Management</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/dashboard" id="material-management-tab"
+            data-toggle="pill"
+            data-target="#material-management"
+            type="button"
+            role="tab"
+            aria-controls="pills-contact"
+            aria-selected="true">Material Management</a>
+    </li>
+  </ul>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div
+          class="tab-pane fade"
+          id="assembly-line"
+          role="tabpanel"
+          aria-labelledby="assembly-line-tab"
+        >
+        Assembly Line
+        </div>
+
+        <div
+        class="tab-pane fade"
+        id="trial-management"
+        role="tabpanel"
+        aria-labelledby="trial-management-tab"
+      >
+      Trial Management
+      </div>
+
+        <div
+          class="tab-pane fade show active"
+          id="material-management"
+          role="tabpanel"
+          aria-labelledby="material-management-tab"
+        >
+        <div class="dashboard-card">
+          <h5 class="mb-4">Dashboard</h5>
+
+          <div class="row">
+            <div class="col-md-3">
+              <!-- Total Orders Card START -->
+              <div class="card card-dash card-dash-orders border-0">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="left-circle circle-orders text-center"><mat-icon>dashboard</mat-icon></div>
+                    </div>
+                    <div class="col-md-8">
+                      <ul class="lists">
+                        <li class="list-number">{{ordersCount.totalCount}}</li>
+                        <li>Total Orders</li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+               <!-- Total Orders Card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- Approved Orders Card START -->
+              <div class="card card-dash card-dash-approved border-0">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="left-circle circle-approved text-center"><i class=" fa fa-regular fa-thumbs-up"></i></div>
+                    </div>
+                    <div class="col-md-8">
+                      <ul class="lists">
+                        <li class="list-number">{{ordersCount.approvedCount}}</li>
+                        <li>Approved Orders</li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+               <!-- Approved Orders Card END -->
+              </div>
+            <div class="col-md-3">
+                <!-- Pending Orders Card START -->
+              <div class="card card-dash card-dash-pending border-0">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="left-circle circle-pending text-center"><mat-icon>access_time</mat-icon></div>
+                  </div>
+                  <div class="col-md-8">
+                    <ul class="lists">
+                      <li class="list-number">{{ordersCount.pendingCount}}</li>
+                      <li>Pending Orders</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+             <!-- Pending Orders Card END -->
+            </div>
+            <div class="col-md-3">
+               <!-- Rejected Orders Card START -->
+               <div class="card card-dash card-dash-rejected border-0">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="left-circle circle-rejected text-center"><i class="fa fa-regular fa-thumbs-down"></i></div>
+                  </div>
+                  <div class="col-md-8">
+                    <ul class="lists">
+                      <li class="list-number">{{ordersCount.pendingCount}}</li>
+                      <li>Rejected Orders</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+             <!-- Rejected Orders Card END -->
+            </div>
+          </div>
+        </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- horizontal-nav END  -->
+
+    <!-- dashboard card START -->
+    <!-- dashboard card END -->
+
+  </div>

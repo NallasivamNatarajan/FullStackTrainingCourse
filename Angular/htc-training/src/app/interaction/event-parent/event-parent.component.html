@@ -1,0 +1,13 @@
+
+<div class="event-participant">
+<h1>Choose Event to View Participant</h1>
+<div class="event-id">
+    <span *ngFor="let event of events">
+        <input type="radio" name="eventId" (change)="onEventIdSelect(event)" [value]="event.eventId"/>&nbsp;{{event.eventId}}&nbsp;&nbsp;{{event.eventName}}&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+</div>
+
+<div class="child-component">
+    <app-participant-child [eventId]="eventId" ></app-participant-child>
+</div>
+</div>

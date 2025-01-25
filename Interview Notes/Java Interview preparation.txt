@@ -1,0 +1,110 @@
+2. Wt r the features u know in java8?
+3. Wt is lambda expression?How it is used?
+4. Wt is functional programming?
+5. Wt is stream api?How it is used?
+6. Store the collection of namelist and get the collection of name 
+who's length is less than 5.
+7. Store the list as map
+8. Wt is default method?
+A interface -> print()
+B interface -> print()
+
+class A
+class B
+class C ,why  Multiple Inheritance not supported
+
+9. How hashmap work internally?
+
+1. Wt is the version of java u used?
+2. Explain abt optional.
+3. Wt is functional interface?
+4. Why the introduced static and default method?
+5. Wt is immutable in java?
+6. How hashset internal work?
+7. Wt is comparable and comparator interface?
+
+
+2. Wt happen if hashcode and equal are not override?
+3. How you will handle exception?
+4. Wt kind of exception we have?
+5. Wt is checked and unchecked exception?
+
+
+1. DateTime
+
+
+4. Terminal and intermediate function
+
+7. List of name. Find how many names are startswith 'P'.
+8. StringOutOfBoundException
+9. Concatenate
+
+
+2. what are the topics/concepts u have used?
+
+4. what is the use lambda expression
+5. Convert ArrayList into threadsafe
+6. Write a pgm to count  No. of duplicate key
+7. Overloading and overridding
+8. How many ways you can initialize the class?
+9. Wt is constructor and type of constructor?
+10. Wt is concurrenthashmap?Internal working 
+11. Fail Fast and Fail Safe Iterators in Java
+
+2. Technology known
+
+4. How method reference work?
+
+6. Create a list with names and list the name start with a and print in uppercase
+7. Wt is StringBuffer and StringBuilder?
+
+9. Is it possible to create try block without catch block?
+
+
+3. Create an Employee list object(id,name,age) add i3 objects in List and fetch the
+ name alone.
+
+5. Wt is the diff. btwn map and set?
+6. As a developer when will you select HashMap and HashSet?
+7. In which scenario you will go for HashMap, LinkedHashMap and ConcurrentHashMap.
+8. Wt is the purpose of TreeMap?
+9. Wt is LinkedHashMap?
+10. How JVM and JRE?
+11. Wt is class loader?
+12. Java is platform independant/dependent?
+
+
+3.Using streams find sum values of list holding integer values
+4. Create a list with String and find the string startswith "s" and store it in new list.
+5. Diff btwn arraylist and linkedlist.
+
+
+object internal methods
+
+treemap and treeset
+hashmap and concurrent hashmap
+arraylist and linked list
+reverse a string
+
+2)Create a Employee Class and add it as a key in HashMap.
+2.a) what will happen if u override hashcode to constant value=50?Where it will store?
+2.b) What will happen if u didnt override equals method?Where it will store?
+
+4) Filter the name of list greater than 5 length,
+4.a) sort the list (need to know both how to sort in stream itself and how to sort
+ using comparator for object class)
+4.b) reverse the order (need to know how to sort in stream itself)
+5)Do the operation with stream.map()
+6)What is the difference between filter() and map() in streams.
+7)Why java 8 is functional Programming? (Repeated)
+8)String storing concept
+String s1 = "abc";
+String s2 = new String("abc");
+System.out.println(s1.equals(s2));
+System.out.println(s1==s2);
+9)JDK,JRE,JVM
+Complier works and what makes java to platform independent?
+What is the use of Class loader?
+Complete knowledge about how .java file -> .class file -> execution?
+10)What is Multithreading (basic )
+11) What is transient keyword?

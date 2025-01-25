@@ -1,0 +1,182 @@
+4.1 Introduction Single Page Applications                                                                                                                        
+        ◦ Typescript
+        ◦ Angular CLI
+        ◦ Introduction to PrimeNg
+        4.2 An Overview of Angular 
+        ◦ Setting up the development environment
+        ◦ First Angular App
+        ◦ Architecture of Angular  Apps  
+        ◦ Angular Bootstrapping
+        ◦ Component, Modules, Templates
+        ◦ Life cycle hooks
+        4.3 Directives
+        ◦   Structural directives
+        ◦   Custom directives 
+        4.4 Data Binding and Event Handling
+        ◦    Property Binding
+        ◦    Two-way Binding
+        ◦    Event Binding
+        ◦    Class Binding, Style Binding
+        4.5 Pipes
+        ◦   Builtin Pipes
+        ◦   Custom Pipes
+        4.6 Forms
+        ◦     Template Driven Forms
+        ◦     Reactive Forms /Dynamic Form
+        ◦     Form Validation
+        ◦     Custom Validators
+        4.7 Services
+        ◦     Introduction to Services and Dependency Injection
+        ◦     Creating custom service
+        ◦     HttpClientModule,  HttpClient 
+        ◦     Observables
+        ◦     RXJS operators
+        ◦     Interceptors
+        4.8 Component Interaction
+        ◦    Parent-child
+        ◦    Child-Parent
+        ◦    Sibling Interaction
+        ◦    Behaviour Subject
+        ◦    Dynamic Component Loading  
+        4.9 Routing and Navigation
+        ◦    Single Page Application
+        ◦    RouterModule, Router service
+        ◦    Router Guards (CanActivate, CanDeactivate,etc..)`
+        4.10  Modules
+        ◦ Feature modules
+        ◦ Module Lazy Loading
+        ◦ Angular Materials (Optional on request)
+        5.1 SQL – Basics                                                                                            
+    • Files Systems 
+    • Hierarchical Databases
+    • Relational Databases
+    • NoSQL Databases
+    • Normalization and De-normalization
+    • Relationships and ER diagram
+    • SQL Commands -    DDL,    DML,    TCL,    DCL
+    • Introduction to functions
+    • Single row functions
+    • Group functions 
+    • SELECT, FROM , WHERE ,GROUP BY, HAVING , ORDER in detail  
+    • Order of query execution 
+    • Introduction sub-queries and correlated sub-queries
+    • Joins and types of Joins
+    • TOP-N Analysis
+    • Ranking
+    • Roll up , Cube 
+    • Cross tab and Pivot 
+    • Case statement
+    • Stored Procedures
+    • Sequences
+    • views
+    • Indexes
+    • Transactions
+    • ACID Properties
+    • Steps to connect a data base with an application program
+    • SQL tuning and best practices
+        6.1 Java Setup 
+    • Installing and configuring Java 
+    • Executing Java Programs
+    • Language Basics
+    • JVM architecture in brief
+    • Class-Loaders 
+        6.2 Classes
+    • Member variables and methods
+    • OOPS
+    • Pass by value and reference
+    • Initializing class and instance members
+    • Static block
+    • Access modifiers for class members
+        6.3  Inheritance
+    • Hiding in sub class
+    • Overriding methods in sub class
+    • Restricting inheritance and class and method level
+    • Anonymous classes
+    • Abstract classes
+    • Interfaces, system interfaces
+    • Marker Interface
+    • Interface uses with realtime Example
+        6.4  Object Basics
+    • Object Life Cycle
+    • Cleanup unused objects
+    • Equals & Hash Code methods
+    • Cloning
+    • Characters and Strings
+    • Wrapper classes
+        6.5 Exception Handling
+    • Try, catch, finally
+    • Checked and unchecked exceptions
+    • Throwing exceptions
+    • Throws clause to propagate exceptions
+    • Runtime Exceptions
+    • Errors
+    • StackTraceElement
+    • User defined Exception
+        6.6 Collection Framework
+    • Collections
+    • List
+    • Set & Sorted Set, Navigable Set
+    • Deque
+    • Map 
+    • Sorted Map & Navigable Map
+    • HashMap and its types
+    • Vector, Hashtable
+    • Generics
+        6.7 JDBC
+    • Establishing Connections
+    • JDBC and Type 4 Drivers
+    • Statements
+    • Statement
+    • Prepared Statement
+    • Callable Statement
+        6.8 New Features 
+    • Enums, Variable arguments,
+    • Static imports, Auto boxing and Auto unboxing of primitive types
+    • Annotations
+    • Enhanced for loop
+    • Strings in switch, Try with resources
+    • Multi catch blocks
+    • Diamond Operator &Objects class 
+    • Java 8 Features
+    • Java Stream API, Lambda Expression
+        6.9  Functional programming
+        7.1 Spring Framework
+    • IOC or DI
+    • Spring EL
+    • AOP 
+    • Spring Web MVC
+    • Spring Exceptions
+    • DAO & Transaction Management
+        7.2  Hibernate – Spring JPA 
+    • Using Hibernate & JPA
+    • Configuring Hibernate
+    • Hibernate API classes
+    • SessionFactory
+    • Session
+    • Query
+    • Criteria
+    • Transaction
+    • Persisting Simple classes
+    • inheritance Mapping
+    • Managing relations [ unidirectional & bidirectional ]
+    • Relational Mapping
+    • Element Collection
+    • HQL
+        7.3  Spring Boot  
+    •   Spring Boot Introduction (includes Annotation, Auto configuration, dependency management and Property file)
+    • How to handle exception in Spring boot?
+    • Spring Rest Service
+    • Spring Actuator
+    • Swagger
+        7.4  Spring security (In-Memory, JDBC, DAO, JWT Authentication, OAuth2 Basics)
+        7.5  Spring Batch
+        7.6 Microservices                                                               
+    • Introduction to Micro services
+    • Feign Declarative REST Client
+    • Web client ( Asynch ) 
+    • Service Discovery in Micro services
+    • Eureka server for client Load balance
+    • Use of Config Server
+    • Zuul API gateway
+    • Zipkins UI for Distributed tracing
+    • Resilience4j for Fault tolerance

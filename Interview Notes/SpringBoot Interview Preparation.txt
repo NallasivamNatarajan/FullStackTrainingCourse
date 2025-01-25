@@ -1,0 +1,193 @@
+Spring Boot Interview Preps:-
+
+Cascade Types [parent to child entity database activities]
+
+ALL - ADD, Updata, Delete, Read [for both parent and child]
+
+PERSIST - ADD [both], Update[only for parent], Delete[parent will delete and child parent id will be removed]
+
+MERGE - Will create new Instance of the entity and save the data
+
+REMOVE - Delte [both] operation only
+
+DETACH - removes the entity from the persistent context. When we use CascadeType. DETACH, the child entity will also get removed from the persistent context.
+
+REFRESH - 
+CascadeType. REFRESH cascades the refresh operation to all associated entities refresh by hibernate session. 
+
+---------------------------------------------------------------------------------------------------------------------------------
+What is the difference between Merge and persist in hibernate?
+persist(Object entity): Make an instance managed and persistent. 
+merge(T entity):
+ Merge the state of the given entity into the current persistence context.
+---------------------------------------------------------------------------------------------------------------------------------
+
+Spring boot
+
+Spring Boot makes Easy for Developers to create Stand Alone , Production-grade based application that you can just run
+
+Spring Boot starter :- Dependencies
+The main responsibility of Spring Boot Starter is to combine a group of common or related dependencies into single dependencies.
+Spring Boot Starter Web -> spring web,spring mvc,tomcat,
+Spring Boot Starter simplifies project build dependencies.
+
+
+Spring Boot Auto Configurator : Beans
+Spring based application requires lot of configuration like either xml config or annotation config.
+AnnotationConfigWebApplicationContext() XmlConfigWebApplicationContext()
+But in Spring Boot need minimal configuration.
+If we use @SpringBootApplication annotation at class level, then Spring Boot AutoConfigurator will automatically 
+add all required annotations to Java Class ByteCode.
+---------------------------------------------------------------------------------------------------------------------------------
+Spring Boot Actuator
+Spring Boot's 'Actuator' dependency is used to monitor and manage the Spring web application. 
+We can use it to monitor and manage the application with the help of HTTP endpoints
+
+Spring Boot Actuator components gives many features
+Providing Management EndPoints to Spring Boot Applications.
+Spring Boot Applications Metrics.
+
+Spring Boot is basically an extension of the Spring framework, which eliminates the boilerplate configurations required for setting up a Spring application.
+
+Embedded server to avoid complexity in application deployment
+Metrics, Health check, and externalized configuration
+Automatic config for Spring functionality – whenever possible
+spring-boot-starter-data-jpa
+spring-boot-starter-security
+spring-boot-starter-test
+spring-boot-starter-web
+spring-boot-starter-thymeleaf
+---------------------------------------------------------------------------------------------------------------------------------
+Spring Profiles: 
+Spring Profiles helps segregating your application configurations, and make them available only in certain environments. ﻿ An application run on many different environments. For example, Dev, QA, Test, Stage, Production etc.
+app.properties:
+spring.profile.active=dev
+spring.application.name=Profiles
+application-dev.properties
+---------------------------------------------------------------------------------------------------------------------------------
+JWT 
+JSON Web Token
+– WebSecurityConfigurerAdapter is the crux of our security implementation. It provides HttpSecurity configurations to configure cors, csrf, session management, rules for protected resources.
+ UsernamePasswordAuthenticationToken gets {username, password} from login Request, AuthenticationManager will use it to authenticate a login account.
+
+– AuthenticationManager has a DaoAuthenticationProvider (with help of UserDetailsService & PasswordEncoder) to validate UsernamePasswordAuthenticationToken
+ OncePerRequestFilter makes a single execution for each request to our API. It provides a doFilterInternal() method that we will implement parsing & validating JWT, loading User details (using UserDetailsService), checking Authorizaion (using Userna
+mePasswordAuthenticationToken).
+– AuthenticationEntryPoint will catch authentication error.
+Controller receives and handles request after it was filtered by OncePerRequestFilter.
+
+– AuthController handles signup/login requests
+
+– TestController has accessing protected resource methods with role based validations.
+Authentication -> Authorization
+---------------------------------------------------------------------------------------------------------------------------------
+Entity Relationship
+Four Types [Uni Directional and Bidirectional]
+One to one 
+One to Many
+Many to One
+Many to Many
+---------------------------------------------------------------------------------------------------------------------------------
+Transactional
+Transactions in Java, as in general refer to a series of actions that must all complete successfully. Hence, if one or more action fails, all other actions must back out leaving the state of the application unchanged
+What is @transactional rollbackFor exception class?
+rollbackFor = Exception.class -> means if 'Exception.class' or any other which extends this class will be thrown during transaction, whole transaction will be rollbacked. Without any changes made.
+Settings of the attributes in @Transactional annotation:
+
+propagation — Optional setting for propagation. This is a very important attribute in setting the transactional behavior. I will cover a use case of it below.
+REQUIRED — support a current transaction, create a new one if none exist
+REQUIRES_NEW — create a new transaction and suspend the current transaction if none exist
+MANDATORY — support a current transaction, throw an exception if none exists
+NESTED — executes within a nested transaction if a current transaction exists
+SUPPORTS — supports currents transaction but execute non-transactionally if none exists
+isolation — transaction isolation level. It decides the level to what the transaction should be isolated to other transactions
+DEFAULT — default isolation level of the datasource
+READ_COMMITTED — indicates dirty reads to be prevented, non-repeatable, and phantom reads can occur.
+READ_UNCOMMITTED — indicates that dirty reads, non-repeatable, and phantom reads can occur
+REPEATABLE_READ — indicates dirty and non-repeatable reads are prevented but phantom reads can occur
+SERIALIZABLE — indicates dirty read phantom read, and non-repeatable reads are prevented
+readOnly — whether the transaction is read-only or read/write
+timeout — transaction timeout
+rollbackFor — arrays of exception class objects that must cause a rollback of the transaction
+rollbackForClassName — arrays of exception class names that must cause a rollback of the transaction
+noRollbackFor — arrays of exception class objects that must not cause a rollback of the transaction
+noRollbackForClassName — arrays of exception class names that must not cause a rollback of the transaction
+---------------------------------------------------------------------------------------------------------------------------------
+What is a Swagger in spring boot?
+Swagger2 is an open source project used to generate the REST API documents for RESTful web services.
+ It provides a user interface to access our RESTful web services via the web browser. 
+To enable the Swagger2 in Spring Boot application, you need to add the following dependencies in our build configurations file.
+Why do we need Swagger?
+Swagger helps users build, document, test and consume RESTful web services. It can be used with both a top-down and bottom-up API development approach. In the top-down, or design-first, method, Swagger can be used to design an API before any code is written.
+---------------------------------------------------------------------------------------------------------------------------------
+Fetch Type Eager  vs Lazy Load :
+One User can have multiple OrderDetails. In eager loading strategy, if we load the User data, it will also load up all orders associated with it and will store it in a memory.
+But when we enable lazy loading, if we pull up a UserLazy, OrderDetail data won't be initialized and loaded into a memory until we make an explicit call to it.
+Advantages and Disadvantages
+Lazy Loading
+Advantages:
+Much smaller initial load time than in the other approach
+Less memory consumption than in the other approach
+Disadvantages:
+Delayed initialization might impact performance during unwanted moments.
+In some cases we need to handle lazily initialized objects with special care, or we might end up with an exception.
+Eager Loading
+Advantages:
+No delayed initialization-related performance impacts
+Disadvantages:
+Long initial loading time
+Loading too much unnecessary data might impact performance
+---------------------------------------------------------------------------------------------------------------------------------
+Composite Primary Keys
+A composite primary key, also called a composite key, is a combination of two or more columns to form a primary key for a table.
+In JPA, we have two options to define the composite keys: the @IdClass and @EmbeddedId annotations.
+In order to define the composite primary keys, we should follow some rules:
+The composite primary key class must be public.
+It must have a no-arg constructor.
+It must define the equals() and hashCode() methods.
+It must be Serializable.
+---------------------------------------------------------------------------------------------------------------------------------
+How to fetch a value of an attribute from application.properties to Java class?
+explore about different ways of doing it?
+@Value("${<property.name>}")
+@PropertySource("classpath:application.properties")
+@Autowired
+private Environment env;
+public void method() {  
+    String path = env.getProperty("userBucket.path");
+}
+---------------------------------------------------------------------------------------------------------------------------------
+What is Spring JPA in Java?
+Spring Boot JPA is a Java specification for managing relational data in Java applications. It allows us to access and persist data between Java object/ class and relational database. JPA follows Object-Relation Mapping (ORM). It is a set of interfaces.
+---------------------------------------------------------------------------------------------------------------------------------
+What is Spring JPA and Hibernate?
+Hibernate is a JPA provider and ORM that maps Java objects to relational database tables. Spring Data JPA is an abstraction that makes working with the JPA provider less verbose. Using Spring Data JPA you can eliminate a lot of the boilerplate code involved in managing a JPA provider like Hibernate.
+---------------------------------------------------------------------------------------------------------------------------------
+2. What Is Inversion of Control?
+Inversion of Control is a principle in software engineering which transfers the control of objects or portions of a program to a container or framework.
+If we want to add our own behavior, we need to extend the classes of the framework or plugin our own classes.
+Dependency injection is a pattern we can use to implement IoC, where the control being inverted is setting an object's dependencies.
+
+Connecting objects with other objects, or “injecting” objects into other objects, is done by an assembler rather than by the objects themselves.
+
+4. The Spring IoC Container
+An IoC container is a common characteristic of frameworks that implement IoC.
+In the Spring framework, the interface ApplicationContext represents the IoC container. The Spring container is responsible for instantiating, configuring and assembling objects known as beans, as well as managing their life cycles.
+XML Bean Dependency Injection
+---------------------------------------------------------------------------------------------------------------------------------
+Spring Boot Architecture
+Spring Boot is a specialised part of the Spring Framework. It is utilised to create high-quality, production-grade Spring Based Applications with minimal effort. Spring Framework code is used to create Spring Boot.
+The four layers in Spring Boot are as follows:
+Presentation Layer
+Business Layer
+Persistence Layer
+Database Layer
+---------------------------------------------------------------------------------------------------------------------------------
+Annotations :
+SpringBootApplication -> Configuration + ComponentScan + EnableAutoConfiguration
+---------------------------------------------------------------------------------------------------------------------------------
+Links
+https://www.digitalocean.com/community/tutorials/key-components-and-internals-of-spring-boot-framework
+https://www.baeldung.com/spring-component-repository-service
+https://www.bezkoder.com/spring-boot-jwt-authentication/
+https://www.interviewbit.com/blog/spring-boot-architecture/

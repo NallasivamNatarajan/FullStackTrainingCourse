@@ -1,0 +1,43 @@
+<!-- Minprice:<input type="number" [(ngModel)]="minprice"> -->
+<br><br>
+<div>
+    <form>
+        <label>Minimum Grade</label> &nbsp; 
+        <input [(ngModel)]="minGrade" type="number" name="minGrade" > 
+        &nbsp; {{minGrade}}&nbsp;
+        <label>Maximum Grade</label> &nbsp; 
+        <input  [(ngModel)]="maxGrade" type="number" name="maxGrade"> &nbsp;
+        {{maxGrade}} 
+    </form>
+</div>
+<br><br><br>
+<div>
+    <table border='1'>
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Salary</th>
+                <th>Join Date</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Grading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let employee of employeeList | employeeGradeFilter:minGrade:maxGrade">
+                <tr>
+                    <td>{{employee.employeeId}}</td>
+                    <td>{{employee.employeeName}}</td>
+                    <td>{{employee.salary | currency : 'INR':'symbol':'3.1-2'}}</td>
+                    <td>{{employee.joinDate | date:'dd-MM-YYYY'}}</td>
+                    <td>{{employee.department}}</td>
+                    <td>{{employee.designation}}</td>
+                    <td>{{employee.grading | number:'1.1-2'}}</td>
+                </tr>
+            </ng-container>
+
+        </tbody>
+
+    </table>
+</div>

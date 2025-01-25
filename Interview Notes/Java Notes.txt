@@ -1,0 +1,285 @@
+	2. Wt r the features u know in java8?	Functional Interface, Lambda Expression,  Stream API, Optional, Method Refference, Date Time API, Default and Static method in Interface, Advance ForEach 	
+	3. Wt is lambda expression?How it is used?	It is an anonymus block,  basically express instances of functional interfaces to execute the only one abstract method. Drawbacks : Local variables are allowed to use but not to modify and only gloabal variables modified. Need to use Atomic integer and Atomic Boolean to resolve the propbrem while streaming with for each. 	
+	4. Wt is functional programming?	Functional programming is a paradigm that allows programming using expressions i.e. declaring functions, passing functions as arguments and using functions as statements (rightly called expressions in Java8). If you want to learn more about why it is called Lambda expressions,	
+	5. Wt is stream api?How it is used?	A Stream in java can be defined as a sequence of elements from a source that supports aggregate operations on them. Collections or Arrays who provides data to stream, Stream dont change the original data structure, they only provide the result as per the pipelined methods.	
+	6. Store the collection of namelist and get the collection of name who's length is less than 5.	"List<String> nameList = Arrays.asList(""Sakthi"", ""Kannan"", ""Anil"",""Ashok"",""Nallasivam"");
+		
+		// 1. Filter names less than five characters using stream
+		List<String> filteredList = nameList.stream()
+											.filter(name -> name.length()<5)
+											.collect(Collectors.toList());
+		
+		"	
+	7. Store the list as map	"// 2. (a) Convert List of String to Map like name as a key and length of the name as value.
+		Map<String,Integer> namesMap = new HashMap<>();
+										nameList.stream()
+												.forEach(name -> {
+														namesMap.put(name, name.length());
+														});
+		
+		// 2. (b) Concert the same without forEach 
+		Map<String,Integer> nameLengthMap = nameList.stream()
+													.collect(Collectors.toMap(
+															Function.identity(), name -> name.length()));"	
+	8. Wt is default method?	Before Java 8, interfaces could have only abstract methods. The implementation of these methods has to be provided in a separate class. So, if a new method is to be added in an interface, then its implementation code has to be provided in the class implementing the same interface. To overcome this issue, Java 8 has introduced the concept of default methods which allow the interfaces to have methods with implementation without affecting the classes that implement the interface	
+	A interface -> print()	Implementing two classes in main class, It will ask to override the second implement class. Main class implement FirstClass, SecondClass	
+	B interface -> print()	When super class and sub class contains same method including parameters and if they are static. The method in the super class will be hidden by the one that is in the sub class. This mechanism is known as method hiding.	
+			
+	class A		
+	class B		
+	class C ,why  Multiple Inheritance not supported	The reason behind this is to prevent ambiguity. Consider a case where class B extends class A and Class C and both class A and C have the same method display(). Now java compiler cannot decide, which display method it should inherit. To prevent such situation, multiple inheritances is not allowed in java.	
+			
+	9. How hashmap work internally?	https://www.geeksforgeeks.org/internal-working-of-hashmap-java/	
+			
+	Satheesh		
+	-----------		
+	1. Wt is the version of java u used?	Java 8	
+	2. Explain abt optional.		
+	3. Wt is functional interface?		
+	4. Why the introduced static and default method?		
+	5. Wt is immutable in java?		
+	6. How hashset internal work?		
+	7. Wt is comparable and comparator interface?		
+			
+	Priyanka Murugaiyan		
+	---------------------------		
+	1. How hashmap work internally?		
+	2. Wt happen if hashcode and equal are not override?		
+	3. How you will handle exception?		
+	4. Wt kind of exception we have?		
+	5. Wt is checked and unchecked exception?		
+	6. Arraylist with names. Find how many names are greater than 5 character		
+			
+	Priyanka Mani		
+	------------------		
+	1. DateTime		
+	2. Optional Class	"Optional class is used to deal with  Nullpointer exception
+What are all we having in Optional class:
+Get(), isPresent(),ifPresent, orElse,orElseGet, orElseThrow etc."	
+	3. Static and default method	" java 8 allows default and static method in interface
+Static Method- we can’t able to override static method  in implemented class we should give
+method definition in interface itself.
+Default method- they help implement the interfaces without breaking the existing code. If that
+Default method we needed in our child class we can override otherwise no need to override. "	
+	4. Terminal and intermediate function	"The main difference between intermediate and terminal operations is that intermediate
+Operations return a stream as a result and terminal operations return non-stream values like
+Primitive or object or collection or may not return anything.
+
+Intermediate Operations :
+map(), filter(), distinct(), sorted(), limit(), skip()
+
+Terminal Operations :
+forEach(), toArray(), reduce(), collect(), min(), max(), count(), anyMatch(), allMatch(),
+NoneMatch(), findFirst(), findAny()"	
+	5. Wt is singleton?	"instance is created one time, we can use it through out the application
+Syntax:"	
+	6. Wt is immutable?	we can’t change the value,example  String is a immutable	
+	7. List of name. Find how many names are startswith 'P'.	"List<String> ls= new ArrayList<>();
+		ls.add(""Priya"");
+		ls.add(""Sakthi"");
+		ls.add(""Pavi"");
+		ls.add(""Pradima"");
+		long count=ls.stream().filter(i->i.startsWith(""P"")).count();
+        "	
+	8. StringOutOfBoundException	"for example i am initialising one string s1=”Priyanka” the length of the string is 8, i am trying to
+Get the 10 index of string like, s1.charAt(10) in this scenario we getting 
+StringOutOfBoundException  "	
+	9. Concatenate	"string having more builtin functions, one of the function is concat. 
+Using this we can combine two or more strings"	
+			
+	Siva karthik		
+	---------------		
+	1. which version of java used	-depends on ur work  experience (i used java 8)	
+	2. what are the topics/concepts u have used.	"
+Lambda
+Predicate
+forEach()
+Streams"	
+	3. what are the features in java 8	"Some of the key Java 8 features are;
+forEach() method in Iterable interface,
+default and static methods in Interfaces,
+Functional Interfaces and Lambda Expressions,
+Java Stream API for Bulk Data Operations on Collections,
+Java Time API,
+Collection API improvements,
+Concurrency API improvements,
+Java IO improvements,
+Optional Class-used to handle NullPointerException,
+Method Reference,"	
+	4. what is the use lambda expression	"https://www.geeksforgeeks.org/lambda-expressions-java-8/
+https://www.programiz.com/java-programming/lambda-expression"	
+	5. Convert ArrayList into threadsafe	"Convert ArrayList into threadsafe can be done in 2 ways:
+1-Collections.synchronizedList(new ArrayList<YourClassNameHere>())
+2-using CopyOnWriteArrayList<String> array= new CopyOnWriteArrayList<String>(); "	
+	6. Write a pgm to count  No. of duplicate key	"Map<String, Long> mapName = list.stream()
+											.collect(Collectors.groupingBy(
+															Function.identity(), Collectors.counting()));"	
+	7. Overloading and overridding	https://www.geeksforgeeks.org/difference-between-method-overloading-and-method-overriding-in-java/	
+	8. How many ways you can initialize the class?	"By new keyword
+By newInstance() method of Class class
+By newInstance() method of constructor class
+By clone() method
+By deserialization"	
+	9. Wt is constructor and type of constructor?	https://www.geeksforgeeks.org/constructors-in-java/	
+	10. Wt is concurrenthashmap?Internal working 	https://www.geeksforgeeks.org/concurrenthashmap-in-java/	
+	11. Fail Fast and Fail Safe Iterators in Java	https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/	
+			
+	Roopendra		
+	--------------		
+	2. Technology known - Java, Spring and SpringBoot		
+	3. Java8 features		
+	4. How method reference work?	The method references can only be used to replace a single method of the lambda expression. A code is more clear and short if one uses a lambda expression rather than using an anonymous class and one can use method reference rather than using a single function lambda expression to achieve the same.	
+	5. Functional programming		
+	6. Create a list with names and list the name start with a and print in uppercase		
+	7. Wt is StringBuffer and StringBuilder?	String buffer and StringBuilder both are mutable classes which can be used to do operation on string objects such as reverse of string, concating string and etc. We can modify string without creating a new object of the string. A string buffer is thread-safe whereas string builder is not thread-safe.1	
+	8. How you will handle exception in java?		
+	9. Is it possible to create try block without catch block?		
+			
+	Narahari		
+	-----------		
+	1. Features of Java 8 - Functional Interface, Lambda, Streams		
+	2. Wt is the meaning of Lambda? 		
+	3. Create an Employee list object(id,name,age) add i3 objects in List and fetch the name alone.		
+	4. How hashmap work internally?		
+	5. Wt is the diff. btwn map and set?		
+	6. As a developer when will you select HashMap and HashSet?		
+	7. In which scenario you will go for HashMap, LinkedHashMap and ConcurrentHashMap.	https://www.geeksforgeeks.org/differences-treemap-hashmap-linkedhashmap-java/	
+	8. Wt is the purpose of TreeMap?		
+	9. Wt is LinkedHashMap?		
+	10. How JVM and JRE?		
+	11. Wt is class loader?		
+	12. Java is platform independant/dependent?		
+			
+	Nivedhitha		
+	--------------		
+			
+	2. Features in Java8	Functional Interface, Lambda Expression, Stream API, Optional, Method Refference, Date Time API, Default and Static method in Interface, Advance ForEach	
+	3.Using streams find sum values of list holding integer values	listint.stream().mapToInt(i -> i).sum();            //create integer array	
+	4. Create a list with String and find the string startswith "s" and store it in new list.	"list.stream().filter(n->n.startsWith(""s"")).collect(Collectors.toList()).forEach(n->System.out.println(""Startwith s value : ""+n));       //create string array 
+"	
+	5. Diff btwn arraylist and linkedlist.	https://www.baeldung.com/java-arraylist-linkedlist	
+	6. How u will handle exception in java?	"try 
+{
+	try 
+	{
+		int a[] = new int[4]; 
+		a[6] = 3; 		
+	} 
+	catch (ArrayIndexOutOfBoundsException arr) 
+	{
+		System.out.println(""ArrayIndexOutOfBoundsException => "" +arr );
+	} 
+	try 
+	{
+		int x = 0, y = 1; 
+		if(x<y)
+			throw new ArithmeticException(""Check Exception"");
+	}
+	catch (ArithmeticException ae) 
+	{
+		System.out.println(""ArithmeticException => "" +ae);
+	}
+}
+catch(Exception e)
+{
+	System.out.println(""End = ""+e);
+}"	
+
+
+
+
+Questions
+object internal methods
+immutabality
+treemap and treeset
+hashmap and concurrent hashmap
+arraylist and linked list
+reverse a string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Collections	Description
+List	"It is an interface present inside java.util package and 
+it implements collection interface.It provides the facility 
+to maintain data in  ordered form and it consist of duplicate value and we iterate it through iterator interface."
+Array List	"Arrays stored in index based,accepts duplicate values,searching and sorting process and non-synchronized
+if our frequent operation is searching we will use array list because it folloews array data structure"
+Linked List	"insertion and deletion process,uses doubly linked list data structure.works on node basis
+and non-synchronized.allows duplicate values.
+if we want to add element between two elements LL
+is prefered.compare with arraylist to linked list, linked list faster than to array list beacuse the shiffing process very low in arraylist"
+Vector	"It's  a legacy class,synchronized and thread-safe,we can iterate it 
+through
+implements list interface
+we can also increase the size of vector by 100 %
+It also increase the capacity as per the users requirment "
+Stack	child class of vector class. It is specially designed for LIFO order
+	
+Set	Will have all the unique elements we can't add duplicate values
+Hash Set	It Uses the hashing concept this concept doesn't save anything in a proper sequence
+Linked Hash set	"It contains unique elements like HashSet.
+It doesn’t allow duplicate values.
+It provides all optional set operations and permits null elements.
+It maintains insertion order.
+It is non-synchronized.
+it maintain insertion order."
+Tree Set	"TreeSet also contains unique elements like HashSet.
+Access and retrieval times are fast.
+It doesn’t allow null elements.
+TreeSet maintains ascending order.
+It is non-synchronized.
+TreeSet can only allow those generic types that are comparable"
+	
+Queue	It is an ordered list of objects with its use limited to inserting elements at the end of the list and deleting elements from the start of the list, it follows the FIFO or the First-In-First-Out principle.
+Priority Queue	It provides us a way to process the objects based on the priority. It is known that a queue follows the First-In-First-Out algorithm, but sometimes the elements of the queue are needed to be processed according to the priority
+Deque	 Deque is an acronym for "double ended queue".Deque supports the addition as well as the removal of elements from both ends of the data structure.
+Array Dequeue	It is also known as an “Array Double Ended Queue”.A special kind of a growable array that allows us to add or remove an element from both sides.
+	
+Map	It is not child interface of collection. To represent group of key value pair we should go for Map Interface.
+Hash Map	Java HashMap class implements the Map interface which allows us to store key and value pair, where keys should be unique. 
+Linked Hash Map	"Incase of insertion order LinkedHashMap is prefered.LinkedHashMap is non synchronized.
+LinkedHashMap may have one null key and multiple null values."
+Tree Map	The TreeMap in Java is used to implement Map interface and NavigableMap along with the AbstractMap Class.The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time,depending on which constructor is used.
+Concurrent Hash Map	ConcurrentHashMap is an enhancement of HashMap.ConcurrentHashMap class is thread-safe, multiple threads can operate on a single object without any complications.At a time any number of threads are applicable for a read operation without locking the ConcurrentHashMap object which is not there in HashMap.
+	
+Comparator	use it for sorting, it has two methods(equal() and compare(), we use this to sort the data on the basis of multiple variable.
+Comparable	it has one method compareTo() and we use it for sorting of data and It can sort the data of one variable.
+Collections	It is a class which is used for sorting the data. It has sort() for sorting the data.
+Collection	It iis a interface which can store the multiple data types at a time.
+Fail Fast	Fail-Fast systems abort operation as-fast-as-possible exposing failures immediately and stopping the whole operation.
+Fail Safe	Fail-Safe systems don't abort an operation in the case of a failure. Such systems try to avoid raising failures as much as possible.
+Iterator	"Iterators are used in Collection framework in Java to retrieve elements one by one.
+It can be applied to any Collection object.Can traverse elements present in Collection only in the forward direction.
+we can perform both read and remove operations."
+List Iterator	"ListIterator is a Java Iterator, which is used to iterate elements one-by-one from a List implemented object.
+Can traverse elements present in Collection both in forward and backward directions."
+	
+	
+Java 8	
+Functional Interface	Single Abstract Method Interfaces. lambda expressions can be used to represent the instance of a functional interface
+Lambda Expression	A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+Streams API	 Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result
+Method Reference	Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. Each time when you are using lambda expression to just referring a method, you can replace your lambda expression with method reference. There are 3 types , Reference to static method, instance method and constructor.
+Optional	It used to prevent Null Pointer Exception. Instead null values it gives empty value. Optional  can be used to specify alternate values to return or alternate code to run
+Date Time API	It is introduced to overcome  the shortcomings of the legacy java.util.Date and java.util.Calendar classes.
+Default & Static Method in IF	Both methods allows to define inside the block. Default methods can be overriden and static methods cannot be overriden.

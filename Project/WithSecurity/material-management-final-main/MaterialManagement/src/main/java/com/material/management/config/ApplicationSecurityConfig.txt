@@ -1,0 +1,43 @@
+package com.htc.springboot.materialmanagement.config;
+
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+
+@SuppressWarnings("deprecation")
+@Configuration
+@EnableAspectJAutoProxy
+@EnableWebSecurity
+public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
+
+	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {   
+		//in memory authentication.
+		auth.inMemoryAuthentication().withUser("shiftincharge").password("user").roles("shiftincharge");
+		auth.inMemoryAuthentication().withUser("admin").password("admin").roles("admin");
+		auth.inMemoryAuthentication().withUser("supervisor").password("welcome").roles("supervisor");
+	}
+
+	@Override
+    protected void configure(HttpSecurity http) throws Exception {
+    	http.cors();
+        http.csrf().disable().authorizeRequests()
+        		.antMatchers("/user/login").permitAll()
+        		.antMatchers(HttpHeaders.ALLOW).permitAll()
+        		.antMatchers("/product/**","/myOrders/**").hasRole("supervisor")
+        		.antMatchers("/orderApproval/**").hasAnyRole("shiftincharge","admin")
+        		.anyRequest().authenticated()
+                .and()
+                .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+	@Bean
+	public static NoOpPasswordEncoder passwordEncoder() {
+		return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+	}
+	
+}

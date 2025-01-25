@@ -1,0 +1,121 @@
+.brand-text {
+    border-left: 2px solid black;
+    padding: 0 10px;
+    font-weight: 500;
+    font-size: 17px;
+  }
+  
+  .main-container header img {
+    margin-right: 10px;
+  }
+  
+  .main-content {
+    height: 88vh;
+    background-color: rgb(238, 235, 235);
+  }
+  
+  .horizontal-nav {
+    height: 50px;
+    line-height: 30px;
+    border-bottom: 2px solid silver !important;
+    margin: 0 25px;
+  }
+  
+  .nav-link {
+    color: black;
+    padding-left: 0px;
+    padding-right: 50px;
+  }
+  
+  .nav-link:focus {
+    padding-left: 0px;
+    border-bottom: 4px solid rgb(204, 7, 7) !important;
+  }
+  
+  .dashboard-card h5 {
+    font-weight: 600;
+  }
+  
+  .card-dash {
+    height: 75px;
+    width: 100%;
+  }
+  
+  .left-circle {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    margin: 10px 0 0 25px;
+    padding-top: 12px;
+  }
+  
+  .fa{
+    font-size: 23px;
+  }
+  
+  .lists{
+    list-style-type: none;
+    padding-left: 10px;
+  }
+  
+  .list-number{
+    font-weight: 700;
+    font-size: 30px;
+    padding:6px 0 0 0;
+  }
+  
+  .card-dash-orders{
+    background-color: rgb(207, 208, 233);
+    color: rgb(42, 100, 226);
+  }
+  
+  .card-dash-approved{
+    background-color: rgb(215,240,221);
+    color: green;
+  }
+  
+  .card-dash-pending{
+    background-color: rgb(251,231,198);
+    color: rgb(255,118,35);
+  }
+  
+  .card-dash-rejected{
+    background-color: rgb(253,216,210);
+    color: rgb(222,0,39);
+  }
+  
+  
+  .circle-orders{
+    background-color: rgb(221, 221, 223);
+  }
+  
+  .circle-approved{
+  background-color: rgb(235,248,238);
+  }
+  
+  .circle-pending{
+    background-color: rgb(253,243,227);
+  }
+  
+  .circle-rejected{
+    background-color: rgb(254,236,233);
+  }
+  
+  .left-box-table{
+    background-color: white;
+    height: 200px;
+    padding: 15px;
+  }
+  
+  .right-box-table{
+    background-color: white;
+    height: 200px;
+    padding: 15px;
+  }
+    th{
+      font-weight: 550;
+    }
+
+    .pagination{
+  margin-left:350px;
+    }

@@ -1,0 +1,84 @@
+<nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        <a routerLink="/home/dashboard" class="text-dark font-weight-normal text-decoration-none">Material Management</a>
+        </li><mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">New Product Request</li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">
+                <a routerLink="/home/view-products" class="text-dark font-weight-normal text-decoration-none">View Product</a></li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">View Product Details</li>
+        </ol>
+</nav>
+<div *ngIf="productMaster" style="margin-left: 20px; margin-top: 10px">
+     <label for="back-button"> 
+    <p style="font-size: 22px"><mat-icon style="font-size: 25pt">chevron_left</mat-icon><strong> {{productMaster.productName}}</strong></p></label>
+    <button id="back-button" routerLink="/home/view-products" hidden></button>
+    <br>
+    <div style="display:flex;">
+        <div>
+            <img src={{productMaster.imageUrl}} alt="Product Image" style="height:250px; width:250px; margin-left: 10px" />
+        </div>
+        <div style="width: 500px">
+            <table style="margin-left: 10px" class="table table-hover">
+                <tr>
+                    <th>
+                        <label>
+                            <b>Name</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.productName}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Category</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.category.categoryName}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Type</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.type.typeName}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Length</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.length}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Dia (mm)</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.diameter}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Drive Size</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.driveSize}}</td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>
+                            <b>Description</b>
+                        </label>
+                    </th>
+                    <td>{{productMaster.description}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

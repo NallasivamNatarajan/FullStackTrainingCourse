@@ -1,0 +1,10 @@
+<h1>Sales Rep details</h1>
+<div>
+    <span *ngFor="let salesRep of salesReps">
+        <input type="radio" name="salesRepId" (change)="onSalesRepIdSelected(salesRep)" [value]="salesRep.salesRepId"/>{{salesRep.salesRepId}} {{salesRep.salesRepName}}&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+</div>
+
+<div>
+    <app-order [salesRepId]="salesRepId" ></app-order>
+</div>

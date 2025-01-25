@@ -1,0 +1,41 @@
+<nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        <a routerLink="/home/dashboard" class="text-dark font-weight-normal text-decoration-none">Material Management</a>
+        </li><mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">New Product Request</li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">View Product</li>
+        </ol>
+</nav>
+<h4 style="margin-top:5px; margin-left: 20px">
+    <strong>{{title}}</strong>
+</h4>
+<div >
+    <table class="table table-hover" border='1' style="margin-left:30px; width: 90%; padding: 10px">
+        <thead style="background-color:rgb(201, 193, 193)">
+            <tr style="align-items: center">
+                <th>Name</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Length</th>
+                <th>Dia (mm)</th>
+                <th>Drive Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let productMaster of productMasterList">
+                    <tr (click)="getProductDetail(productMaster.productId)">
+                    <td>
+                        <!-- <img src="./assets/img/productimage.png" alt="P_Img" height="30px" width=30px> -->
+                        <img src={{productMaster.imageUrl}} height="40px" width=50px>
+                        {{productMaster.productName}}</td>
+                    <td>{{productMaster.category.categoryName}}</td>
+                    <td>{{productMaster.type.typeName}}</td>
+                    <td>{{productMaster.length}}</td>
+                    <td>{{productMaster.diameter}}</td>
+                    <td>{{productMaster.driveSize}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>

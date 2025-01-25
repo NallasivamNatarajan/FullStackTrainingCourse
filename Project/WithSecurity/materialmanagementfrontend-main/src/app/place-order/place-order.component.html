@@ -1,0 +1,84 @@
+<div class="main-container">  
+  <nav class="" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+    <a routerLink="/home/dashboard" class="text-dark font-weight-normal text-decoration-none">Material Management</a>
+    </li><mat-icon>chevron_right</mat-icon>
+    <li class="breadcrumb-item active" aria-current="page">Place Order</li>
+    </ol>
+  </nav>
+  
+  <div class="form-inline">
+    <div class="form-group">
+      <label class="placedInText" for="placedInText">Select the Line your are Placed in</label>
+      <select name="lineNumber" [(ngModel)]="lineNumber" class="form-select form-control" style="width:200px; margin-left: 10px" required>
+          <option [ngValue]="lineNumber.lineNumber" *ngFor="let lineNumber of lineNumbersList">{{lineNumber.lineNumber}}</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <div class="placeOrders mt-3">
+  <!-- placeOrders Start -->
+  <div class="row">
+    <div class="col">
+      <p class="placedInText">Place Order</p>
+    </div>
+  
+    <div class="col">
+      <div class="input-group mb-3">
+        <input
+          type="search"
+          name="productNameSearch" [(ngModel)]="productNameSearch"
+          class="form-control"
+          placeholder="Search Product"
+          aria-label="Search"
+          aria-describedby="button-addon2"
+        />
+        <!-- <div class="input-group-append border">
+          <button
+            class="btn btn-light bg-white btn-sm text-dark"
+            type="button"
+            id="button-addon2"
+          >
+            <span class="fa fa-search form-control-feedback"></span>
+          </button>
+        </div> -->
+      </div>
+    </div>
+    <div class="col">
+      <select name="categorySearch" [(ngModel)]="categorySearch" class="form-select form-control" required>
+        <option [ngValue]="category.categoryName" *ngFor="let category of categoryList">{{category.categoryName}}</option>
+
+      </select>
+    </div>
+    <div class="col text-center">
+      <button class="btn btn-sm btn-dark w-75" (click)="addProductsToCart()">
+
+        <strong> +&nbsp; Add to Cart</strong>
+      </button>
+    </div>
+  </div>
+  <!-- placeOrders End -->
+  
+   <!-- card start -->
+      <div class="row">
+        <div class="col-3" *ngFor="let product of productsData | placeOrder:lineNumber:productNameSearch:categorySearch">
+          <div class="card p-2">
+            <div class="card-body border rounded">
+                &nbsp;&nbsp;<input class="form-check-input custom-checkbox" type="checkbox" (click)="checkBoxClicked($event,product)">
+                <img src={{product.imageUrl}} alt=""
+                height="35px"
+                width="120px"
+                class="image-size">
+            </div>
+            <p class="pt-2 font-weight-bolder">{{product.productName}}</p>
+            <p class="">{{product.category.categoryName}}</p>
+            <p class="">{{product.type.typeName}}</p>
+            <p class="">Part number : {{product.partNumber}}</p>
+          </div>
+        </div>
+      </div>
+  <!-- card end -->
+  
+  </div>
+  

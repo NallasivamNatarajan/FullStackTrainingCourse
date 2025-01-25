@@ -1,0 +1,139 @@
+core java exercise
+
+Prepare core java programs for the given requirement 
+
+Conditional statements:
+
+1. Write a Java Program to Display the ATM Transaction. The user will choose from any one of the available options as input like withdraw, deposit and check balance.
+
+Case 1: Withdraw
+	If the balance amount greater than or equal to the withdrawal amount then Perform the transaction and give the user the desired amount, else print Insufficient Funds message.
+Case 2: Deposit
+	Add the received input from the user to balance and update its value.
+Case 3: Check Balance
+	Print a message on screen showing the value of balance amount.
+Case 4: Exit
+
+2. Implement the following logic to arrive at the loan eligibility for an employee: (Do not use logical operator)
+
+(a) For an unmarried permanent job holder, if the service has been for 30 years or
+more, the loan amount is Rs.50,000; otherwise the loan amount is Rs.25,000
+(b) For a married permanent job holder, if the service has been for 30 years or more,
+the loan amount is Rs.60,000; otherwise the loan amount is Rs.35,000
+(c) For temporary job holder, the loan amount is Rs.10,000
+
+
+
+String & functions:
+
+3) Write a function validate_Email to validate the customers email ID which satisfy the below conditions Boolean validate Email (String email) {
+....
+....
+}
+a) Email id should not start with '.' and '@' 
+b) Email id should end with either 'm' or 'n' 
+c) Email id should have '@' only once
+d) Length should be minimum 10 maximum 30
+
+
+4) Identify Function prototype for the following requirements. 
+
+a) Library Management
+b) E-ticket application
+c) Online Shopping
+d) Mobile Recharge application
+
+
+5. Write a function validateIPaddress that accepts an ipAddress (string) as an input and does the following validations
+
+(a) Length should be minimum 7 and maximum 15
+(b) Should not start and end with dot
+(c) Should have exactly 3 dots
+(d) Dots should not be in consecutive positions.
+(e) Should not permit alphabets and special characters
+
+
+
+Classes & Object
+OOPS
+
+6. Identify the class names for the following apps:
+a) Ola App
+b) Flipkart App
+c) Redbus App
+d) Zomato App
+
+
+7. Pick class names from the given list
+
+Excellent
+Lazy 
+Status 
+age
+transferMoney 
+productId 
+HTCGloabalservices 
+mobilenumber
+Ram
+sleep 
+fast 
+eating
+
+
+
+8. a) Create a class EmailValidator , encapsulate the method prepared in question no 3 and test it ( try with and without static methods ) 
+
+   b) Create a class IPValidator , encapsulate the method you have created  in question no 5 and test it ( try with and without static methods ) 
+
+9. Store Customer objects in list , set and map  , try basic CRUD operations.
+
+10. A bank has customers, should have sufficient facility to do CRUD operations with the customers.
+Code customers with these possibilities (List, Map)
+prepare an interface to acheive CRUD operations 
+Handle user defined exceptions like “CustomerNotFoundExceptions”, “InSufficientAmountException”
+
+
+11 . Redo Question number 3 and 5 using regular expressions .
+
+
+File handling
+
+12. Segregate an customer file ( libre office fomat )  with respect to account type(savings/current) into 2 output files.
+
+13.How do you check if an input file ( libre office format ) is empty or not ?
+
+14. Write a core java  program to achieve the following business logics
+
+Create an bank management system for a customer that does transaction(Withdraw) of Customers, 
+where the details of the customer such as CusomerId, CustomerName, AccountType and AvailableBalance are maintained in a customer File, whenever a transaction request comes, it is recorded in Transaction File which contains the Fields such as Transaction_Id, CustomerId and Amount.
+If the requested Amount is available and sufficient
+   Update the AvailableBalance
+else
+   Populate failure transaction file with status either “Not Available” or “Not sufficient”
+
+Note: Try with libreoffice calc format.
+
+15. A Customer file (.xls file format) has details about customerId, customerName, AccountType, and amount, read the data from the file validate (accountType should be saving/current) and load the data to customer table(use postgres or mysql).
+
+a) Write the invalid data to rejection file
+b) Log the read and insert counter
+c) Store the DB connection properties with .XLS (using LibreOffice lib) or XML file.
+d) Handle EmptyFileException.
+
+
+16. Try basic CRUD operation on cusyomer table ( use postgres or mysql ) using core java .
+    prepare an interface for the CRUD operations , handle user defined exceptions as and when required 
+
+17. Simulate Unload operation of a customer table to customer file in .XLS file format.
+
+18. Use loggers and log the CRUD counters to a log file.
+
+19. List out the challenges you faced in core java lab.
+
+20. Redo question number 14 ( use Customer table instead of Customer file ) 
+
+21. Do a comparative case study of core java with another programing language ( python or C# ) 
+
+22. What are the changes you would accomodate in a java program , when you migrate from postgres DB to MYSQL DB.
+
+23.Do a presentation on SOLID principles 

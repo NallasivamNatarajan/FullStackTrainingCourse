@@ -1,0 +1,10 @@
+
+<h6><strong>Data from another Component</strong></h6>
+<h1>{{existingDataReceived}}</h1>
+
+<br>
+
+<h5><strong>Base Emitting Data </strong></h5>
+<label for="item-input">Add Name</label> &nbsp;
+<input type="text" id="item-input" #newItem> &nbsp;
+<button (click)="addNewItem(newItem.value)">Add New Name to an Existing List</button>&nbsp;

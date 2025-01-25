@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.htc.hibernate.entity.Cattle" table="hb_cattle">
+		<id name="cattleId" />
+		<property name="birthDay" />
+		<property name="birthWeight" />
+		<property name="entranceDate" />
+		<property name="originalArea" />
+		<property name="cattleHouseId" />
+		<property name="flag" />
+		<property name="breedAreaId" />
+		<property name="immunityporty" />
+	</class>
+</hibernate-mapping>

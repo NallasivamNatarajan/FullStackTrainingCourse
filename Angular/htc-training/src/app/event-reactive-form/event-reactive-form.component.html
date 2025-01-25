@@ -1,0 +1,226 @@
+<!-- <label for="name">Name</label>
+<input type="text" name="name" [formControl]="name" value="{{name.value}}">
+<button (click)="updateName()">Update</button>
+<h1> {{name.value}}</h1> -->
+
+<!-- <div class="reactive-form">
+    <h1>
+        <strong>{{title}}</strong>
+    </h1>
+    <form [formGroup]="eventReactiveForm">
+        <p> Is newly loaded ? {{eventReactiveForm.pristine}}</p>
+        <p> Is valid ? {{eventReactiveForm.valid}}</p>
+        <p> Is touched ? {{eventReactiveForm.touched}}</p>
+        <p> Is dirty ? {{eventReactiveForm.dirty}}</p>
+        <div class="form-group">
+            <label>Event Name</label>
+            <select name="eventNames" class="form-select" formControlName="eventNames">
+                <option [value]="event" *ngFor="let event of eventList">{{event}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventNames'].invalid && (eventReactiveForm.controls['eventNames'].touched || eventReactiveForm.controls['eventNames'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventNames'].errors?.['required']">
+                    Event is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventNames'].errors?.['validEvent']">
+                    Select a Valid Event
+                </div>
+            </div>
+            <div *ngIf="eventReactiveForm.invalid && (eventReactiveForm.touched||eventReactiveForm.dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.hasError('validEvent')">
+                    Select a Valid Event
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Participant Name</label>
+            <input type="text" name="participantName" formControlName="participantName" minlength="3" maxlength="20">
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['participantName'].invalid && (eventReactiveForm.controls['participantName'].touched || eventReactiveForm.controls['participantName'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['participantName'].errors?.['required']">
+                    Participant Name is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['participantName'].errors?.['minlength']">
+                    Participant Name shold be minimum 3
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea name="address" formControlName="address"></textarea>
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['address'].invalid && (eventReactiveForm.controls['address'].touched || eventReactiveForm.controls['address'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['address'].errors?.['required']">
+                    Address is mandate
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" formControlName="email">
+            <div *ngIf="eventReactiveForm.controls['email'].invalid && (eventReactiveForm.controls['email'].touched || eventReactiveForm.controls['email'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['email'].errors?.['required']">
+                    Email Id is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['email'].errors?.['minlength']">
+                    Email Id shold be minimum 7
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="number" name="contactNo" formControlName="contactNo">
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['contactNo'].invalid && (eventReactiveForm.controls['contactNo'].touched || eventReactiveForm.controls['contactNo'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['contactNo'].errors?.['required']">
+                    Contact Number is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['contactNo'].errors?.['minlength']">
+                    Contact Number shold be minimum 10 digits
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" name="eventDate" formControlName="eventDate">
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventDate'].invalid && (eventReactiveForm.controls['eventDate'].touched || eventReactiveForm.controls['eventDate'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventDate'].errors?.['required']">
+                    Event Date is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventDate'].errors?.['validateDate']">
+                    Event Date should not be in past
+                </div>
+            </div>
+            <div *ngIf="eventReactiveForm.invalid && (eventReactiveForm.touched||eventReactiveForm.dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.hasError('validateDate')">
+                    Event Date should not be in past
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Gender</label>
+            <input type="radio" name="gender" value="male" formControlName="gender"> Male
+            <input type="radio" name="gender" value="female" formControlName="gender"> Female
+        </div>
+        <h6>Interested receive NewsLetter
+            <input type="checkbox">
+        </h6>
+        <div class="form-group">
+            <button class="btn btn-primary" [disabled]=eventReactiveForm.invalid>Submit</button>&nbsp;
+            <button class="btn btn-primary" [disabled]=eventReactiveForm.pristine (click)="reset()">Reset</button>
+        </div>
+    </form>
+</div> -->
+
+
+
+<div class="reactive-form">
+    <h1>
+        <strong>{{title}}</strong>
+    </h1>
+    <form [formGroup]="eventReactiveForm">
+        <p> Is newly loaded ? {{eventReactiveForm.pristine}}</p>
+        <p> Is valid ? {{eventReactiveForm.valid}}</p>
+        <p> Is touched ? {{eventReactiveForm.touched}}</p>
+        <p> Is dirty ? {{eventReactiveForm.dirty}}</p>
+        <div class="form-group">
+            <label>Event Name</label>
+            <select name="eventNames" class="form-select" formControlName="eventNames">
+                <option [value]="event" *ngFor="let event of eventList">{{event}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventNames'].invalid && (eventReactiveForm.controls['eventNames'].touched || eventReactiveForm.controls['eventNames'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventNames'].errors?.['required']">
+                    Event is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventNames'].errors?.['validEvent']">
+                    Select a Valid Event
+                </div>
+            </div>
+            <div *ngIf="eventReactiveForm.invalid && (eventReactiveForm.touched||eventReactiveForm.dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.hasError('validEvent')">
+                    Select a Valid Event
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Participant Name</label>
+            <input type="text" name="participantName" class="form-control" formControlName="participantName" minlength="3" maxlength="20">
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['participantName'].invalid && (eventReactiveForm.controls['participantName'].touched || eventReactiveForm.controls['participantName'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['participantName'].errors?.['required']">
+                    Participant Name is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['participantName'].errors?.['minlength']">
+                    Participant Name shold be minimum 3
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea name="address" class="form-control" formControlName="address"></textarea>
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['address'].invalid && (eventReactiveForm.controls['address'].touched || eventReactiveForm.controls['address'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['address'].errors?.['required']">
+                    Address is mandate
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" formControlName="email">
+            <div *ngIf="eventReactiveForm.controls['email'].invalid && (eventReactiveForm.controls['email'].touched || eventReactiveForm.controls['email'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['email'].errors?.['required']">
+                    Email Id is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['email'].errors?.['minlength']">
+                    Email Id shold be minimum 7
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="number" name="contactNo" class="form-control" formControlName="contactNo">
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['contactNo'].invalid && (eventReactiveForm.controls['contactNo'].touched || eventReactiveForm.controls['contactNo'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['contactNo'].errors?.['required']">
+                    Contact Number is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['contactNo'].errors?.['minlength']">
+                    Contact Number shold be minimum 10 digits
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" name="eventDate" class="form-control" formControlName="eventDate">
+            <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventDate'].invalid && (eventReactiveForm.controls['eventDate'].touched || eventReactiveForm.controls['eventDate'].dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventDate'].errors?.['required']">
+                    Event Date is mandate
+                </div>
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.controls['eventDate'].errors?.['validateDate']">
+                    Event Date should not be in past
+                </div>
+            </div>
+            <div *ngIf="eventReactiveForm.invalid && (eventReactiveForm.touched||eventReactiveForm.dirty)">
+                <div class="alert alert-danger" *ngIf="eventReactiveForm.hasError('validateDate')">
+                    Event Date should not be in past
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Gender</label>
+            <input type="radio" name="gender" value="male" formControlName="gender"> Male
+            <input type="radio" name="gender" value="female" formControlName="gender"> Female
+        </div>
+        <h6>Interested receive NewsLetter
+            <input type="checkbox">
+        </h6>
+        <div class="form-group">
+            <button class="btn btn-primary" [disabled]=eventReactiveForm.invalid>Submit</button>&nbsp;
+            <button class="btn btn-primary" [disabled]=eventReactiveForm.pristine (click)="reset()">Reset</button>
+        </div>
+    </form>
+</div>

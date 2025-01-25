@@ -1,0 +1,121 @@
+<nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        <a routerLink="/home/dashboard" class="text-dark font-weight-normal text-decoration-none">Material Management</a>
+        </li><mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item " aria-current="page">
+                <a routerLink="/home/my-orders" class="text-dark font-weight-normal text-decoration-none">My Orders</a>
+            </li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item " aria-current="page">Order Summary</li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item " aria-current="page">{{orderNum}}</li>
+        </ol>
+
+</nav>
+<br><br>
+<!-- <label for="back-button"> 
+        <a class="back-link" href=""  routerLink="/home/my-orders" style="font-size: 22px;margin-left: -821px">
+                <mat-icon style="font-size: 23pt">chevron_left</mat-icon>&nbsp;&nbsp;&nbsp;
+                {{orderNum}}</a>
+</label> -->
+
+                <!-- <button id="back-button" routerLink="/my-orders" hidden></button> -->
+                
+    <!-- <a class="order-button" mat-button routerLink="/my-orders"> Order Number</a> -->
+
+    <!-- <div class="track">
+    <div class="step active"> <span class="icon"> <i class="fa fa-dot-circle-o"></i> </span> <span class="text">My Orders</span> </div>
+    <div class="step "> <span class="icon"> <i class="fa fa-dot-circle-o"></i> </span> <span class="text">Shift in charge</span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-dot-circle-o"></i> </span> <span class="text"> Admin in charge </span> </div>
+    <div class="step"> <span class="icon"> <i class="fa fa-dot-circle-o"></i> </span> <span class="text">Received</span> </div>
+        </div> -->
+    <div class="container-bar">
+        
+         <span *ngFor="let item of counts;let i = index" >
+                <span class="circle-desc" [class.circle-desc-active]="orderStatus == item">{{ item }}</span>
+                <span class="circles" [class.active]="orderStatus == item"></span>
+                <span class="bar" *ngIf="(i != counts.length-1)"></span>
+         </span>
+    </div>
+    <!-- <br>
+    <div class="container">
+        <span *ngFor="let item of counts;let i = index">
+          <span class="circle-desc" [class.circle-desc-active]="orderStatus == item">{{ item }}</span>
+          <span class="circles" [class.active]="orderStatus == item"></span>
+          <span class="bar" *ngIf="(i != counts.length-1)"></span>
+        </span>
+    </div>
+    <br> -->
+<div class = "container-table">
+            <div class="request-table">
+                <table  class="table" border="1px solid black" >
+                   <tr >
+                       <td class="table-head">Requestor Details </td>
+                       </tr>
+                       <tr>
+                            <td class="data-head data">Requested On</td>
+                            <td class="request-data"><span>:</span>&nbsp;{{orderSummary.orderRequestedDate | date}} </td>
+                            <td></td>
+                            <td class="data-head data">Request Department</td>
+                            <td class="request-data"><span>:</span>&nbsp;{{orderSummary.departmentName}}</td>
+                       </tr>
+                       <tr>
+                            <td class="data-head data">Line</td>
+                            <td class="request-data"><span>:</span>&nbsp;{{orderSummary.lineNumber}}</td>
+                            <td></td>
+                            <td class="data-head data">Request By </td>
+                            <td class="request-data"><span>:</span>&nbsp;{{orderSummary.userName}}</td>
+                       </tr>
+                       <tr>
+                            <td class="data-head data">Request Section </td>
+                            <td class="request-data"><span>:</span>&nbsp;{{orderSummary.requestSection}}</td>
+                            <td></td>
+                            <td class="data-head data">Order Type </td>
+                            <td class="request-data"><span>:</span>&nbsp;{{orderSummary.orderType}}</td>
+                       </tr>
+                   
+                 
+                   
+              
+                </table>
+
+                <table class="table" border="1px solid black">
+                        <tr class="table-head"colspan="4">
+                                <td class="table-head">Order Summary</td> 
+                    
+                        </tr>
+                       
+                        <tr class="order-data-head" style="font-weight: 550">
+                            <th> Item Name    </th>
+                            <th> Category  </th>
+                            <th> Type            </th>
+                            <th> Length      </th>
+                            <th> Diameter       </th>
+                            <th> DriverSize     </th>
+                            <th> Quantity     </th>
+                          
+                        </tr>
+                        <ng-container *ngFor = "let order of orderData" >
+                        <tr>
+                                <td> {{ order.productName }} </td>
+                                <td> {{ order.category.categoryName }} </td>
+                                <td> {{ order.type.typeName}} </td>
+                                <td> {{ order.length }} </td>
+                                <td> {{ order.diameter }} </td>
+                                <td> {{ order.driveSize }} </td>
+                                <td> {{ order.quantity }} </td>                   
+                            </tr>
+                        </ng-container>
+                    </table>
+                    <div class="comments ">
+                            <h6>Shift Incharge Comments</h6>
+                            <textarea rows="3" style="width: 100%" maxlength="250" disabled="true">{{shiftInchargeComment}}</textarea>
+                            <h6>Admin Comments</h6>
+                            <textarea rows="3" style="width: 100%" maxlength="250" disabled="true">{{adminComment}}</textarea>
+                    </div>
+                   
+                <button class='btn btn-dark cancel' (click)="deletOrderDetails(orderSummary.orderId)">Cancel Order </button>
+     </div>
+
+</div>    

@@ -1,0 +1,160 @@
+<!-- <div class="container"> -->
+<nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        <a routerLink="/home/dashboard" class="text-dark font-weight-normal text-decoration-none">Material Management</a>
+        </li><mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">New Product Request</li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">Add New Product</li>
+        </ol>
+</nav>
+<h4 style="margin-top:5px; margin-left: 20px">
+    <strong>{{title}}</strong>
+</h4>
+<!-- </div> -->
+<div class="reactive-form">
+    <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+        <div style="display: flex;">
+            <div class="product-image">
+                <img src={{imageUrl}} height="200px" width="200px">
+                <br>
+                <label for="image">
+                    <span style="color: blue; margin-left: 50px">Click to browse</span>
+                </label>
+                <input id="image" class="form-control" formControlName="imageUrl" type="file" style="width: 130px" (change)="onSelectFile($event)"
+                    hidden>
+            </div>
+
+            <div class="product-info">
+                <div class="form-group">
+                    <label>Product Name
+                        <span style="color: red" appMarkAsterisk></span>
+                    </label>
+                    <input type="text" name="productName" class="form-control" style="width:500px" formControlName="productName">
+                    <div style="color: red" *ngIf="newProductForm.controls['productName'].invalid && (newProductForm.controls['productName'].touched || newProductForm.controls['productName'].dirty)">
+                        <div *ngIf="newProductForm.controls['category'].errors?.['required']">
+                            Product Name is mandatory
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div style="display: flex;">
+                    <div class="form-group">
+                        <label>Category
+                            <span style="color: red" appMarkAsterisk></span>
+                        </label>
+                        <select name="category" class="form-select" style="width: 250px" formControlName="category">
+                            <option [ngValue]="category" *ngFor="let category of categoryList">{{category.categoryName}}</option>
+                        </select>
+                        <div style="color: red" *ngIf="newProductForm.controls['category'].invalid && (newProductForm.controls['category'].touched || newProductForm.controls['category'].dirty)">
+                        <div *ngIf="newProductForm.controls['category'].errors?.['required']">
+                            Category is mandatory
+                        </div>
+                    </div>
+                    </div>&nbsp;&nbsp;
+
+
+                    <div class="form-group">
+                        <label>Type
+                            <span style="color: red" appMarkAsterisk></span>
+                        </label>
+                        <select name="type" class="form-select" style="width: 250px" formControlName="type">
+                            <option [ngValue]="type" *ngFor="let type of typeList">{{type.typeName}}</option>
+                        </select>
+                        <div style="color: red" *ngIf="newProductForm.controls['type'].invalid && (newProductForm.controls['type'].touched || newProductForm.controls['type'].dirty)">
+                        <div *ngIf="newProductForm.controls['type'].errors?.['required']">
+                            Type is mandatory
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <br>
+
+                <div style="display: flex">
+                    <div class="form-group">
+                        <label>Length</label>
+                        <input type="number" name="length" class="form-control" style="width: 250px" formControlName="length">
+                    </div>&nbsp;&nbsp;
+
+                    <div class="form-group">
+                        <label>Dia (mm)</label>
+                        <input type="number" name="diameter" class="form-control" style="width: 250px" formControlName="diameter">
+                    </div>
+                </div>
+                <br>
+
+                <div style="display: flex">
+                    <div class="form-group">
+                        <label>Drive Size</label>
+                        <input type="number" name="driveSize" style="width: 250px" class="form-control" formControlName="driveSize">
+                    </div>&nbsp;&nbsp;
+
+                    <div class="form-group">
+                        <label>Line Number
+                            <span style="color: red" appMarkAsterisk></span>
+                        </label>
+                        <select name="lineNumber" class="form-select" style="width: 250px" formControlName="lineNumber">
+                            <option [ngValue]="lineNumber.lineNumber" *ngFor="let lineNumber of lineNumbersList">{{lineNumber.lineNumber}}</option>
+                        </select>
+                        <div style="color: red" *ngIf="newProductForm.controls['lineNumber'].invalid && (newProductForm.controls['lineNumber'].touched || newProductForm.controls['lineNumber'].dirty)">
+                        <div *ngIf="newProductForm.controls['lineNumber'].errors?.['required']">
+                            Line Number is mandatory
+                        </div></div>
+                    </div>
+                </div>
+                <br>
+
+                <div style="display: flex;">
+                    <div class="form-group">
+                        <label>Quantity
+                            <span style="color: red" appMarkAsterisk></span>
+                        </label>
+                        <input type="number" name="quantity" class="form-control" style="width: 250px" formControlName="quantity">
+                        <div style="color: red" *ngIf="newProductForm.controls['quantity'].invalid && (newProductForm.controls['quantity'].touched || newProductForm.controls['quantity'].dirty)">
+                        <div *ngIf="newProductForm.controls['quantity'].errors?.['required']">
+                            Quantity is mandatory
+                        </div></div>
+                        <!-- <div *ngIf="newProductForm.invalid && (newProductForm.touched||newProductForm.dirty)">
+                            <div style="color: red" *ngIf="newProductForm.hasError('validateQuantityCount')
+                            && newProductForm.controls['quantity'].invalid && (newProductForm.controls['quantity'].touched || newProductForm.controls['quantity'].dirty)">
+                                Quantity should be more than 0
+                            </div>
+                        </div>  -->
+                    </div>&nbsp;&nbsp;
+
+                    <div class="form-group">
+                        <label>Volume in
+                            <span style="color: red" appMarkAsterisk></span>
+                        </label>
+                        <select name="type" class="form-select" style="width: 250px" formControlName="volume">
+                            <option [ngValue]="volume" *ngFor="let volume of volumeList">{{volume.volumeMeterics}}</option>
+                        </select>
+                        <div style="color: red" *ngIf="newProductForm.controls['volume'].invalid && (newProductForm.controls['volume'].touched || newProductForm.controls['volume'].dirty)">
+                        <div *ngIf="newProductForm.controls['volume'].errors?.['required']">
+                            Volume In is mandatory
+                        </div></div>
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" style="width: 500px" class="form-control" formControlName="description"></textarea>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="text-center">
+                <button class="btn btn-dark" type="submit" [disabled]=newProductForm.invalid>Add</button>&nbsp;
+            </div>
+        </div>
+        <br>
+        <br>
+    </form>
+</div>

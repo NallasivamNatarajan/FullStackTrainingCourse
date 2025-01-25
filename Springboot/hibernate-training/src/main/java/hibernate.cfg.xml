@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Database properties -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://172.16.51.88:3306/cattle_management?autoReconnect=true</property>
+		<property name="connection.username">FordTraining</property>
+		<property name="connection.password">12345Welcome</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">8</property>
+
+		<!-- SQL Dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level class -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<mapping resource="cattle.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

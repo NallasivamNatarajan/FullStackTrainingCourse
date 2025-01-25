@@ -1,0 +1,92 @@
+<div class="container">
+    <nav class="" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+        <a href="/home/dashboard" class="text-dark font-weight-normal text-decoration-none">Material Management</a>
+        </li><mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item active" aria-current="page">
+                <a href="/home/to-do" class="text-dark font-weight-normal text-decoration-none">To Do</a></li>
+        <mat-icon>chevron_right</mat-icon>
+        <li class="breadcrumb-item " aria-current="page">{{orderSummary.orderNumber}}</li>
+        </ol>
+        </nav>
+    <!-- <label for="back-button"> 
+            <a class="back-link" href=""  routerLink="/home/to-do" style="font-size: 22px">
+                <mat-icon style="font-size: 23pt">chevron_left</mat-icon>&nbsp;&nbsp;&nbsp;{{orderSummary.orderNumber}}
+            </a>
+        </label> -->
+            <!-- <button id="back-button" routerLink="/my-orders" hidden></button> -->
+            <br>
+
+<div class = "container-table">
+        <div class="request-table">
+            <table  class="table" border="1px solid black" >
+               <tr >
+                   <td class="table-head">Requestor Details </td>
+                   </tr>
+                   <tr>
+                        <td class="data-head data">Requested On</td>
+                        <td class="request-data"><span>:</span>&nbsp;{{orderSummary.orderRequestedDate | date}} </td>
+                        <td></td>
+                        <td class="data-head data">Request Department</td>
+                        <td class="request-data"><span>:</span>&nbsp;{{orderSummary.departmentName}}</td>
+                   </tr>
+                   <tr>
+                        <td class="data-head data">Line</td>
+                        <td class="request-data"><span>:</span>&nbsp;{{orderSummary.lineNumber}}</td>
+                        <td></td>
+                        <td class="data-head data">Request By </td>
+                        <td class="request-data"><span>:</span>&nbsp;{{orderSummary.userName}}</td>
+                   </tr>
+                   <tr>
+                        <td class="data-head data">Request Section </td>
+                        <td class="request-data"><span>:</span>&nbsp;{{orderSummary.requestSection}}</td>
+                        <td></td>
+                        <td class="data-head data">Order Type </td>
+                        <td class="request-data"><span>:</span>&nbsp;{{orderSummary.orderType}}</td>
+                   </tr>
+               
+             
+               
+          
+            </table>
+
+            <table class="table" border="1px solid black">
+                    <tr class="table-head"colspan="4">
+                            <td class="table-head">Order Summary</td> 
+                
+                    </tr>
+                   
+                    <tr class="order-data-head" style="font-weight: 550">
+                        <th> Item Name    </th>
+                        <th> Category  </th>
+                        <th> Type            </th>
+                        <th> Length      </th>
+                        <th> Diameter       </th>
+                        <th> DriverSize     </th>
+                        <th> Quantity     </th>
+                      
+                    </tr>
+                    <ng-container *ngFor = "let order of orderData" >
+                    <tr>
+                            <td> {{ order.productName }} </td>
+                            <td> {{ order.category.categoryName }} </td>
+                            <td> {{ order.type.typeName}} </td>
+                            <td> {{ order.length }} </td>
+                            <td> {{ order.diameter }} </td>
+                            <td> {{ order.driveSize }} </td>
+                            <td> {{ order.quantity }} </td>                   
+                        </tr>
+                    </ng-container>
+                </table>
+                <div class="comments ">
+                        <h6>Shift Incharge Comments</h6>
+                        <textarea  rows="3" style="width: 100%" maxlength="250" [(ngModel)]="comment" name="comment"></textarea>
+                </div>
+                <br>
+                <button class='btn btn-default reject' (click)="rejectOrderDetails(orderSummary.orderId)">Reject</button>
+                <button class='btn btn-dark approve' (click)="approveOrderDetails(orderSummary.orderId)">Approve </button>
+
+ </div>
+
+</div>    

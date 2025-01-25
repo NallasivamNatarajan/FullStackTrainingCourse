@@ -1,0 +1,71 @@
+.main-container {
+    margin: 0 40px 0 40px;
+  }
+  
+  .brand-text {
+    margin-left: 15px;
+  }
+  
+  .main-content {
+    display: flex;
+    margin-top: 10px;
+    height: 500px;
+  }
+  
+  .left-box {
+    flex: 55%;
+  }
+  
+  .right-box {
+    flex: 45%;
+  }
+  
+  .car-img-n {
+    height: 500px;
+    width: 100%;
+  }
+  
+  .right-content {
+    margin-top: 10%;
+    margin-left: 25%;
+  }
+  
+  .sign-text {
+    text-align: center;
+    border-bottom: 4px solid rgb(204, 7, 7);
+  }
+  
+  .pass-links {
+    top: 0;
+  }
+  
+  .account {
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  .btn-submit {
+    padding: 4px 20px;
+  }
+  
+  .terms {
+    padding-top: 75px;
+  }
+  
+  .footer {
+    left: 0;
+    margin-left: -35px;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    left: 0;
+  }
+  
+  .footer ul li {
+    display: block;
+    float: left;
+    padding-right: 40px;
+  }
+  
+  

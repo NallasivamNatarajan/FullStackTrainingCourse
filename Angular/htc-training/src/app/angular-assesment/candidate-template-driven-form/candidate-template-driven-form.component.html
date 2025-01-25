@@ -1,0 +1,88 @@
+<div class="candidate-temp-form">
+    <h1>
+        <strong>{{title}}</strong>
+    </h1>
+    <form calss="candidate-template-form" #candidateForm="ngForm">
+        <p> Is newly loaded ? {{candidateForm.pristine}}</p>
+        <p> Is valid ? {{candidateForm.valid}}</p>
+        <p> Is touched ? {{candidateForm.touched}}</p>
+        <p> Is dirty ? {{candidateForm.dirty}}</p>
+        <div class="form-group">
+            <label><strong>Choose Job</strong></label>
+            <select name="chooseJob" appChooseJob class="form-select" [(ngModel)]="candidate.chooseJob" #chooseJob="ngModel" required>
+                <option *ngFor="let job of jobs">{{job}}</option>
+            </select>
+            <div style="color: red" *ngIf="chooseJob.invalid && (chooseJob.touched || chooseJob.dirty)">
+                <div style="color: red" *ngIf="chooseJob.errors?.['required']">
+                    Choose Job is mandate
+                </div>
+                <div style="color: red" *ngIf="chooseJob.errors?.['appChooseJob']">
+                    Select valid Job
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> <strong>Candidate Name</strong> </label>
+                <input type="text" name="candidateName" class="form-control" [(ngModel)]="candidate.candidateName" required #candidateName="ngModel"
+                    minlength="3" maxlength="20">
+                <div style="color: red" *ngIf="candidateName.invalid && (candidateName.touched || candidateName.dirty)">
+                    <div style="color: red" *ngIf="candidateName.errors?.['required']">
+                        Candidate Name is mandate
+                    </div>
+                    <div style="color: red" *ngIf="candidateName.errors?.['minlength']">
+                        Candidate Name shold be minimum 3
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><strong>Address</strong> </label>
+                <textarea name="address" class="form-control" [(ngModel)]="candidate.address" required minlength="10" maxlength="200" #address="ngModel"></textarea>
+                <div style="color: red" *ngIf="address.invalid && (address.touched || address.dirty)">
+                    <div style="color: red" *ngIf="address.errors?.['required']">
+                        Candidate Address is mandate
+                    </div>
+                    <div style="color: red" *ngIf="address.errors?.['minlength']">
+                        Candidate Address shold be minimum 10
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><strong>Email</strong> </label>
+                <input type="email" name="email" class="form-control" [(ngModel)]="candidate.email" #email="ngModel" required minlength="7"
+                    maxlength="30">
+                <div *ngIf="email.invalid && (email.touched || email.dirty)">
+                    <div style="color: red" *ngIf="email.errors?.['required']">
+                        Email Id is mandate
+                    </div>
+                    <div style="color: red" *ngIf="email.errors?.['minlength']">
+                        Email Id shold be minimum 7
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><strong>Contact Number</strong></label>
+                <input type="number" name="contactNo" class="form-control" required [(ngModel)]="candidate.contactNo" minlength="10" maxlength="16"
+                    #contactNo="ngModel">
+                <div style="color: red" *ngIf="contactNo.invalid && (contactNo.touched || contactNo.dirty)">
+                        <div style="color: red" *ngIf="contactNo.errors?.['required']">
+                                Contact Number is mandate
+                            </div>
+                    <div style="color: red" *ngIf="contactNo.errors?.['minlength']">
+                        Contact Number shold be minimum 10 digits
+                    </div>
+                </div>
+            </div>
+
+            <h2>Interested to receive NewsLetter
+                <input type="checkbox">
+            </h2>
+            <div class="form-group">
+                <button class="btn btn-primary" [disabled]=candidateForm.invalid>Register Now</button>&nbsp;
+                <button class="btn btn-primary" [disabled]=candidateForm.pristine (click)="clearForm()">Clear Form</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+What is Pipe and types? show an example code
+Explain about component, module and services
+What is meant by single page application?
+Template and Reactive form code
+Parent and Child interaction explanation thru code
+
+
+
+MySql:
+Left join & Right join
+Union and Union All
+
+
+Angular Exerceises all
+how to run application in different port using command and without using command
+lifecycle hooks
+JIT and AOT  Compilers
+why we are using ! and ? while initializing properties of a class
+reactive and template driven forms
+angular application flow
+angular service
+how to deploy angular application
+angular routing
+
+sql:
+left join
+views and their uses
+index in sql
+Explain where clause

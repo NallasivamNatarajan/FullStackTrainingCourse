@@ -1,0 +1,44 @@
+<br><br><br><div><form>
+    <label for="events">Event</label> &nbsp;
+    
+    <select [(ngModel)]="evntName" name="evntName" id="evntName">
+        <option value="dance">Dance</option>
+        <option value="speech">Speech</option>
+        <option value="sing">Sing</option>
+        <option value="game">Game</option>
+    </select> &nbsp;
+
+    {{evntName}}
+</form> </div><br><br>
+<!-- Minprice:<input type="number" [(ngModel)]="minprice"> -->
+<div>
+<table border='1'>
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Participant Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Contact No</th>
+            <th>Event Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let event of eventList|eventFilter:evntName">
+            <!-- <tr *ngIf="event.eventName=='dance'"> -->
+                <!-- <tr *ngIf="event.eventName==evntName"> -->
+                <tr>
+                <td>{{event.eventName}}</td>
+                <td>{{event.participantName}}</td>
+                <td>{{event.address}}</td>
+                <td [ngClass]="'email'">{{event.email}}</td>
+                <td>{{event.contactNo}}</td>
+                <td>{{event.manufactureDate}}</td>
+
+            </tr>
+        </ng-container>
+
+    </tbody>
+
+</table>
+</div>

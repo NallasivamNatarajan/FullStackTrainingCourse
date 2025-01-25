@@ -1,0 +1,42 @@
+.main-content {
+  height: 88vh;
+  background-color: rgb(238, 235, 235);
+  padding: 20px 20px 0 20px;
+}
+
+.fa-trash{
+  color: rgb(211, 30, 30);
+}
+
+.table-body{
+  background-color:  rgba(0,0,0,.03);
+}
+
+.card-body{
+  padding: 0;
+}
+
+.table-head{
+  background-color: rgb(197, 190, 190);
+}
+
+.quantity-box{
+background-color: white !important;
+padding: 2px 15px;
+border: 1px solid rgb(189, 186, 186);
+border-radius:5px ;
+}
+
+.placeorder{
+  float: right;
+  margin: 20px 25px;
+}
+
+
+.partNumber{
+  font-size: 13px;
+}
+
+.rounded-circle{
+  font-size: 1px;
+}

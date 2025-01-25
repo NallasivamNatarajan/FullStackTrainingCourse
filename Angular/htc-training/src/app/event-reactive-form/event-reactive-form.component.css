@@ -1,0 +1,10 @@
+
+.reactive-form{
+    width: 35%;
+    margin-left: 30%;
+    padding: 10px 10px 10px 10px;
+}
+.alert{
+    padding: 0px;
+    position: relative;
+}

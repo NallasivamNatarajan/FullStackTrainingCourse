@@ -1,0 +1,52 @@
+<div class="main-container">
+  <div class="main-content">
+    <div class="cart-content">
+      <h5>Cart</h5>
+      <div class="cart-summary">
+        <div class="card">
+          <div class="card-header">
+            <h6 class="font-weight-bold">Cart Summary</h6>
+          </div>
+          <div class="card-body">
+            <table class="w-100">
+              <thead class="table-head">
+                <th class="pl-3">Item Name</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Length</th>
+                <th>Dia(mm)</th>
+                <th>Drive Size</th>
+                <th></th>
+                <th class="text-center">Action</th>
+              </thead>
+              <tbody class="table-body">
+                <tr *ngFor="let product of productsData">
+                  <td class="pl-3">{{product.productName}}
+                    <p class="text-secondary partNumber">Part Number : {{product.partNumber}}</p>
+                  </td>
+                  <td>{{product.category.categoryName}}</td>
+                  <td>{{product.type.typeName}}</td>
+                  <td>{{product.length}}</td>
+                  <td>{{product.diameter}}</td>
+                  <td>{{product.driveSize}}</td>
+                  <td><button class="btn-custom btn-light border rounded-circle border-secondary" (click)="dec(product)"><mat-icon>remove</mat-icon></button>
+                    &nbsp; <span class="quantity-box">{{product.quantity}}</span>&nbsp;
+                    <button class="btn-custom btn-light border rounded-circle border-secondary" (click)="inc(product)"><mat-icon>add</mat-icon></button></td>
+                  <td class="text-center"><button class="btn" (click)="deleteItemCart(product)"><mat-icon>delete</mat-icon></button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div  class="placeorder">
+              <table>
+              <tr class="bg-light">
+                 <td class="text-center"><button class="btn btn-sm btn-dark" (click)="placeOrders(productsData)">Place Order</button></td>
+              </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

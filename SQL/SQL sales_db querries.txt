@@ -1,0 +1,276 @@
+1) Which category has maximum products 
+SELECT COUNT(product_code), category_code
+FROM product GROUP BY category_code
+HAVING COUNT(product_code) >= ALL (SELECT COUNT(product_code)
+FROM product GROUP BY CATEGORY_CODE);
+
+2) Which category has minimum products?
+SELECT COUNT(product_code), category_code
+FROM product GROUP BY category_code
+HAVING COUNT(product_code) <= ALL (SELECT COUNT(product_code)
+FROM product GROUP BY CATEGORY_CODE);
+
+3)Which category has no products?
+SELECT cc.category_code FROM Category cc
+WHERE NOT EXISTS (SELECT ca FROM product p 
+WHERE cc.category_code = p.category_code);
+
+4)
+SELECT price,product_code, category_code, prod_desc FROM product
+WHERE price=(SELECT MAX(price) FROM product;)
+
+5)
+SELECT price,product_code,prod_desc FROM product
+WHERE price=(select Max(price)from product);
+
+6) 
+SELECT category_code, SUM(QTY_ON_HAND) 
+FROM product
+GROUP BY CATEGORY_CODE 
+HAVING SUM(QTY_ON_HAND) >=  ALL (SELECT SUM(QTY_ON_HAND) 
+					FROM product
+                                	GROUP BY CATEGORY_CODE);
+
+7)
+SELECT category_code, SUM(price) 
+FROM product
+GROUP BY CATEGORY_CODE
+Having SUM(price) >= ALL (SELECT category_code, SUM(price) 
+FROM product
+GROUP BY CATEGORY_CODE)
+
+8)
+SELECT category_code, product_code, SUM(QTY_ON_HAND)
+FROM product GROUP BY CATEGORY_CODE
+HAVING SUM(QTY_ON_HAND) <=  ANY (SELECT SUM(QTY_ON_HAND)
+					FROM product
+				 	GROUP BY CATEGORY_CODE);
+
+9)
+SELECT order_code, COUNT(product_code)
+FROM order_detail GROUP BY order_code
+HAVING COUNT(product_code) >= ALL (SELECT COUNT(product_code)
+FROM order_detail GROUP BY order_code);
+
+10)
+SELECT product_code, SUM(QTY_ORDERED)
+FROM order_detail
+GROUP BY product_code 
+HAVING SUM(QTY_ORDERED) >= ALL (
+				SELECT SUM(QTY_ORDERED)
+				FROM order_detail
+				GROUP BY product_code);
+
+11)
+SELECT product_code, SUM(QTY_ORDERED)
+FROM order_detail
+GROUP BY product_code
+HAVING SUM(QTY_ORDERED) <= ALL (
+				SELECT SUM(QTY_ORDERED)
+				FROM order_detail
+				GROUP BY product_code);
+
+12)
+SELECT p.product_code 
+from product p
+WHERE NOT EXISTS (
+		SELECT od.product_code 
+                   FROM order_detail od
+			WHERE p.product_code=od.product_code);
+
+13)
+Which is the costliest order? ( Calculate the bill )
+
+SELECT od.order_code, SUM(od.qty_ordered * p.price) as costliest_bill
+FROM order_detail od 
+JOIN product p
+ON od.product_code = p.product_code
+GROUP BY order_code
+HAVING SUM(od.qty_ordered * p.price) >= ALL(
+SELECT SUM(od.qty_ordered * p.price)
+FROM order_detail od 
+JOIN product p
+ON od.product_code = p.product_code
+GROUP BY order_code
+)
+
+14)
+In which date the costliest order made?
+
+SELECT om.order_date,
+SUM(od.qty_ordered*pd.price)
+from order_master om
+join order_detail od
+on om.ORDER_CODE = od.ORDER_CODE
+join product pd
+on pd.PRODUCT_CODE = od.PRODUCT_CODE
+group by om.order_code
+having SUM(od.qty_ordered *pd.price) >= all (SELECT
+SUM(od.qty_ordered *pd.price)
+from order_master om
+join order_detail od
+on om.ORDER_CODE = od.ORDER_CODE
+join product pd
+on pd.PRODUCT_CODE = od.PRODUCT_CODE
+group by om.order_code);
+
+
+15)
+Which customer made the costliest order?
+
+SELECT om.CUSTOMER_CODE,
+SUM(od.qty_ordered*pd.price)
+from order_master om
+join order_detail od
+on om.ORDER_CODE = od.ORDER_CODE
+join product pd
+on pd.PRODUCT_CODE = od.PRODUCT_CODE
+group by om.order_code
+having SUM(od.qty_ordered *pd.price) >= all (SELECT
+SUM(od.qty_ordered *pd.price)
+from order_master om
+join order_detail od
+on om.ORDER_CODE = od.ORDER_CODE
+join product pd
+on pd.PRODUCT_CODE = od.PRODUCT_CODE
+group by om.order_code);
+
+16)
+SELECT om.order_date,
+SUM(od.qty_ordered*pd.price)
+from order_master om
+join order_detail od
+on om.ORDER_CODE = od.ORDER_CODE
+join product pd
+on pd.PRODUCT_CODE = od.PRODUCT_CODE
+group by om.order_code
+having om.ORDER_DATE = date(now())
+
+
+17)
+CREATE VIEW report_customer_vw AS
+(SELECT customer_name as "CUSTOMER NAME",orm.order_code AS "ORDER CODE",order_date,SUM(qty_ordered) AS total_products,SUM(price*qty_ordered) as bill
+FROM order_master orm
+JOIN customer cus
+ON (cus.customer_code=orm.customer_code)
+JOIN order_detail ord
+ON (ord.order_code=orm.order_Code)
+JOIN product prd
+ON (prd.product_code=ord.product_code)
+GROUP BY cus.customer_code,orm.order_code)
+
+---------------------------------------
+
+
+
+18)
+SELECT c.customer_code, om.ORDER_CODE, 
+CASE WHEN SUM(od.qty_ordered*pd.price)>500000
+THEN 'Eligible' ELSE 'Not Eligible' END as 'Eligibility check'
+FROM customer c
+JOIN order_master om
+ON om.customer_code=c.customer_code
+JOIN order_detail od
+ON om.ORDER_CODE = od.ORDER_CODE
+JOIN product pd
+ON pd.PRODUCT_CODE = od.PRODUCT_CODE
+GROUP BY om.order_code;
+
+
+19)
+select cnt.country_code, count(brn.BRANCH_CODE) 
+from branch brn
+join country cnt
+on cnt.country_code = brn.country_code
+group by cnt.country_code
+having count(brn.BRANCH_CODE) >= ALL 
+	(select count(brn.BRANCH_CODE) 
+from branch brn
+join country cnt
+on cnt.country_code = brn.country_code
+group by cnt.country_code);
+
+20: Which country has minimum branches?
+SELECT country_code
+FROM branch
+GROUP BY country_code
+HAVING COUNT(branch_code)<=ALL(SELECT COUNT(branch_code)
+                          FROM branch
+                          GROUP BY country_code)
+
+
+21. Which country has no branches?
+WITH temp as
+(select co.country_code, co.country_name, br.branch_code, count(br.branch_code) as branch_count
+from country co
+join branch br
+ON br.country_code=co.country_code
+group by country_name)
+SELECT * from temp
+where branch_count=0
+
+22. Which branch has more sales representatives?
+WITH temp as
+(select br.branch_name, count(sal.salesrep_id) as salesrepcount
+from salesrep sal
+join branch br
+ON sal.branch_code=br.branch_code
+group by br.branch_code)
+select * from temp
+where salesrepcount=(select max(salesrepcount)from temp)
+
+23.Which branch has less sales representatives?
+WITH temp as
+(select br.branch_name, count(sal.salesrep_id) as salesrepcount
+from salesrep sal
+join branch br
+ON sal.branch_code=br.branch_code
+group by br.branch_code)
+select * from temp
+where salesrepcount=(select MIN(salesrepcount)from temp)
+
+24.Which branch has no sales representatives?
+WITH temp as
+(select br.branch_name, count(sal.salesrep_id) as salesrepcount
+from salesrep sal
+join branch br
+ON sal.branch_code=br.branch_code
+group by br.branch_code)
+select * from temp
+where salesrepcount=0
+
+
+25. Who is the active sales rep?
+WITH temp as
+(select sal.salesrep_name, count(orm.salesrep_id) as salesreporderbyid
+from order_master orm
+join salesrep sal
+ON sal.salesrep_id=orm.salesrep_id
+group by orm.salesrep_id)
+select * from temp
+where salesreporderbyid=(select max(salesreporderbyid) from temp)
+
+26. Display all the manager’s names?
+SELECT DISTINCT mgr.salesrep_name as managername
+FROM salesrep mgr
+JOIN salesrep emp
+ON     mgr.salesrep_id=emp.mgr
+
+27. Display the sales rep that who has joined before their manager?
+SELECT mgr.salesrep_id,mgr.salesrep_name as managername,emp.salesrep_name as respname,
+mgr.salesrep_doj as MgrDOJ,emp.salesrep_doj as EmpDOJ
+FROM salesrep mgr
+JOIN salesrep emp
+ON     mgr.salesrep_id=emp.mgr
+    WHERE emp.salesrep_doj<mgr.salesrep_doj
+
+28. Display the sales rep that who earns more than their manager?
+SELECT mgr.salesrep_id,mgr.salesrep_name as managername,emp.salesrep_name respname,mgr.salary,emp.salary
+FROM salesrep mgr
+JOIN salesrep emp
+ON     mgr.salesrep_id=emp.mgr
+    WHERE emp.salary>mgr.salary
+
+
+
+

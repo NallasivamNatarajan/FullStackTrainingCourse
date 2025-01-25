@@ -1,0 +1,35 @@
+Satheesh
+-----------
+Version of Angular?
+Open the question given in Angular question
+Run the angular application
+1. What is two binding?
+2. What is the difference between event and property binding?
+3. How the data send/receive from parent/child?
+4. Types of complier in angular.
+5. Why we are calling angular as a single page application?
+6. How you will connect with backend service/database?
+7. What is @Injectable?
+8. What is pipe in angular?
+9. Write a component for registration form and submit button should be enable after all required field filled.
+
+SQL
+------
+1. write a query to get product detail which price is less than 500.
+2. Union and UnionAll
+3. Left join
+
+Siva
+------
+1. Explain the flow of angular application.
+2. how to run angular application in 4200/4600 port no
+3. angular service 
+4. What are life cycle hook method? How each method work?
+5. Which method will invoke first when we execute?
+6. What we will do in constructor and what we will do in onInit?
+
+SQL
+------
+1. Union and UnionAll
+2. Left join
+3. View and Index

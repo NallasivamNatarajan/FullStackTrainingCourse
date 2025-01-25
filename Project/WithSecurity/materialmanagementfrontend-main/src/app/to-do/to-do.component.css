@@ -1,0 +1,67 @@
+.order-button{
+    margin:0px;
+    
+    }
+    
+    th{
+        font-weight: 550;
+       padding: 16px
+    }
+    
+    td{
+        padding: 16px;
+    }
+    
+    .order-data-head{
+        background-color: rgb(207, 211, 219);
+        border-radius: 100px
+    }
+    .title{
+        font-weight: 550;
+        padding: 5px 0px 0px 10px;
+    }
+    
+    .table-head{
+    padding: 10px;
+    font-weight: 550;
+    
+    
+    }
+    
+    
+    
+    .data-head{
+        color: gray;
+    }
+    .container-table{
+        padding: 10px
+    }
+
+    .reject{
+       position: absolute;
+       right: 600px;
+       border: 1px solid black;
+
+    }
+
+    .approve{
+        position: absolute;
+        right: 500px;
+        border: 1px solid black;
+        
+    }
+    .approve.active{
+        position: absolute;
+        right: 500px;
+        border: 1px solid black;
+        
+    }
+
+    .request-table{
+        margin-bottom: 50px;
+    }
+
+    .back-link{
+        text-decoration: none;
+        color: #000;
+    }

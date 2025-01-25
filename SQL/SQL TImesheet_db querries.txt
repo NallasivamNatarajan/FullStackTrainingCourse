@@ -1,0 +1,334 @@
+1. Which PROJECT has maximum number of EMPLOYEES?
+
+select project_id,count(emp_id) from allocation
+group by project_id
+having count(emp_id)>= all(select count(emp_id) from allocation group by project_id)
+
+2. Which EMPLOYEE has not yet been allocated to any PROJECT?
+
+select emp_id,emp_name from employee where emp_id  not in (select emp_id from allocation)
+
+3.Which role played by the employee 'E03' frequently?
+select role_id, count(emp_id)
+from allocation
+where emp_id = 'E03'
+group by role_id
+Having count(role_id)>= ALL(select count(role_id)
+			from allocation
+			where emp_id = 'E03'
+			Group by role_id)
+
+4. costliest project?
+
+select project_id,sum(datediff(to_date,from_date)*amount_per_day)
+from allocation
+group by project_id 
+having sum(datediff(to_date,from_date))*amount_per_day) >= ALL(select sum(datediff(to_date,from_date))*amount_per_day)
+				from allocation
+				group by project_id)
+5.How many employees were there in costliest Project?
+
+select count(empid),project_id,sum((to_date-from_date)*amount_per_day)
+from allocation
+group by project_id 
+having sum((to_date-from_date)*amount_per_day) >= ALL(select sum((to_date-from_date)*amount_per_day)
+				from allocation
+				group by project_id)
+				
+6.Which is the cheapest Project in the year 2012?
+select project_id,sum((to_date-from_date)*amount_per_day)
+from allocation
+where from_date>="2012-01-01"
+group by project_id  
+having sum((to_date-from_date)*amount_per_day) <= ALL(select sum((to_date-from_date)*amount_per_day)
+				from allocation
+                where from_date>="2012-01-01"
+				group by project_id)
+
+
+7. What is the salary of employee, who played maximum roles in Project 'P07'? EMP_ID,SALARY FROM employee WHERE emp_id in (select emp_id allocatin WHERE project='p07' GROUP BY emp_id HAVING COUNT(role_id)>=all
+
+8.How many projects are handled by senior most employee?
+
+SELECT COUNT(project_id)
+FROM allocation
+WHERE emp_id=(SELECT emp_id FROM(SELECT emp_id,dense_rank() OVER(order by hire_date desc)rnk
+        FROM employee
+        order by hire_date desc)rnk_project WHERE rnk<=1)
+
+9.What is the total amount spent for unassigned employees?	
+
+SELECT SUM(SALARY)
+FROM EMPLOYEE
+WHERE EMP_ID NOT IN (SELECT EMP_ID FROM ALLOCATION)
+
+10.How many projects are completed till date (Assume to_date is completion date in Allocation table)? 	MAX(TO_DATE)<CURRENTDATE
+
+
+11.How many employees have worked for less than 10 Projects?
+
+SELECT  COUNT(DISTINCT EMP_ID)
+FROM ALLOCATION 
+WHERE EMP_ID  IN(SELECT EMP_ID  
+                FROM  ALLOCATION
+                GROUP BY EMP_ID 
+                HAVING COUNT(DISTINCT PROJECT_ID)<=10)
+
+12.How many employees are working with role 'R02' in project 'P04'?
+
+SELECT COUNT(emp_id) FROM allocation WHERE role_id='R02' and
+project_id='P04'
+
+
+13.Which client has given maximum number of Projects? SKIP
+
+
+
+
+14.Which employee has not been allocated to any project in the year 2010?
+
+SELECT
+emp_id,emp_name 
+FROM employee
+WHERE emp_id
+NOT IN (SELECT emp_id 
+	FROM allocation WHERE year(FROM_DATE) = 2010); 
+	
+
+15.Find the total number of days worked by the employee 'E04' in project 'P02'?
+
+SELECT sum(datediff(to_date-FROM_date)) FROM allocation WHERE emp_id='E04' and Project_id='P02'
+
+16.Which Project has been completed exactly on deadline date?
+
+SELECT project_name
+FROM t_project AS prj
+JOIN allocation AS alc ON (alc.project_id = prj.project_id)
+WHERE prj.deadline = alc.to_date;
+
+17.How many employees were working for the Project, which has crossed the deadline?
+
+SELECT a.project_id,COUNT(a.emp_id)
+FROM allocation a 
+join t_project t
+on( a.project_id=t.project_id)
+WHERE a.to_date > t.deadline
+group by a.project_id
+
+18.Which Project has been completed so earlier?
+SELECT project_name 
+FROM t_project AS prj
+JOIN allocation AS alc ON (alc.project_id = prj.project_id)
+GROUP BY prj.project_id
+HAVING SUM(datediff(to_date,FROM_date)) >= all (SELECT SUM(datediff(to_date,FROM_date))
+						FROM t_project AS prj
+						JOIN allocation AS alc ON (alc.project_id = prj.project_id)
+						GROUP BY prj.project_id)
+
+
+19.Which Project has taken maximum duration?
+
+SELECT project_name 
+FROM t_project AS prj
+JOIN allocation AS alc ON (alc.project_id = prj.project_id)
+GROUP BY prj.project_id
+HAVING SUM(datediff(to_date,FROM_date)) <= all (SELECT SUM(datediff(to_date,FROM_date))
+						FROM t_project AS prj
+						JOIN allocation AS alc ON (alc.project_id = prj.project_id)
+						GROUP BY prj.project_id)
+
+20.Prepare a report in following format
+Emp Id Total Number of Days in bench
+
+SELECT emp.emp_id as "Emp Id",totaldays, project_days,
+case when totaldays-project_days is null then totaldays else totaldays-project_days end as "Total Number of Days in bench"
+FROM (
+SELECT emp_id,datediff(current_date,hire_date) AS totaldays
+FROM employee) emp
+LEFT JOIN
+(SELECT emp_id,SUM(datediff(to_date,FROM_date)) AS project_days
+FROM allocation alloc
+GROUP BY emp_id) aloc
+ON aloc.emp_id=emp.emp_id
+
+ 
+
+21)report_project_with_no_of_emp
+
+Create View report_project_with_no_of_emp AS
+(select prj.project_name as "Project Name", Count(alo.emp_id) as "No of Employees"
+from t_project as prj
+Join allocation alo
+on alo.project_id=prj.project_id
+group by prj.project_id)
+
+22) report_role_with_no_of_emp
+
+Create View report_role_with_no_of_emp as
+(select rol.role_title as "Roles", Count(alo.emp_id) as "No of Employees"
+from role rol
+join allocation alo
+on alo.role_id=rol.role_id
+group by rol.role_id)
+
+23) report_emp_name_with_no_of_projects
+
+Create View report_name_with_no_of_projects as 
+(select emp.emp_name as "Emp Name", count(alo.project_id) as "No of Projects" from employee emp
+join allocation alo 
+on alo.emp_id=emp.emp_id
+group by emp.emp_id)
+
+24) report_emp_name_with_no_of_roles
+
+Create View report_name_with_no_of_roles as 
+(select emp.emp_name as "Emp Name", count(alo.role_id) as "No of Roles" from employee emp
+join allocation alo 
+on alo.emp_id=emp.emp_id
+group by emp.emp_id)
+
+25) report_role_with_no_of_emp
+
+Create View report_role_with_no_of_emp as
+(select rol.role_title as "Roles", Count(alo.emp_id) as "No of Employees"
+from role rol
+join allocation alo
+on alo.role_id=rol.role_id
+group by rol.role_id)
+
+26) report_role_with_no_of_projects
+
+Create View report_role_with_no_of_emp as
+(select rol.role_title as "Roles", Count(alo.project_id) as "No of Projects"
+from role rol
+join allocation alo
+on alo.role_id=rol.role_id
+group by rol.role_id)
+
+27)
+
+Create View report_empname_role_noofprojects as
+(select emp.emp_name as "Employee Name",rol.role_title as "Roles", Count(alo.project_id) as "No of Projects"
+from employee emp
+join allocation alo
+on emp.emp_id = alo.emp_id
+join role rol
+on alo.role_id=rol.role_id
+group by emp.emp_id, rol.role_id)
+
+28)
+
+Create View report_project_role_noofemp as  
+(select prj.project_name as "Project Name",rol.role_title as "Role Name",
+ Count(alo.emp_id) as "No of Employees"
+from t_project prj
+join allocation alo
+on alo.project_id=prj.project_id
+join role rol
+on rol.role_id = alo.role_id
+group by alo.project_id, rol.role_id)
+
+29)
+
+Create View report_role_empname_noofprojects as
+(select rol.role_title as "Roles", emp.emp_name as "Employee Name",Count(alo.project_id) as "No of Projects"
+from role rol
+join allocation alo
+on alo.role_id=rol.role_id
+join employee emp
+on emp.emp_id = alo.emp_id
+group by rol.role_id, emp.emp_id)
+
+30)
+Create View report_dept_nofoemp as
+(select dep.dept_id as "Dept Id", Count(emp_id) as "No of Employees"
+from department dep
+join employee emp
+on emp.dept_id = dep.dept_id
+group by dep.dept_id)
+
+31)
+Create View report_mgr_noofemp as
+(select mgr_id as "Manager", Count(emp_id) as "No of Employees"
+from employee 
+group by mgr_id)
+
+32)
+Create View report_empname_role_prjname as
+(select emp.emp_name as "Employee Name",rol.role_title as "Roles", prj.project_name as "Project Name"
+from employee emp
+join allocation alo
+on emp.emp_id = alo.emp_id
+join role rol
+on alo.role_id=rol.role_id
+join t_project prj
+on alo.project_id = prj.project_id
+group by emp.emp_id, rol.role_id, prj.project_id)
+
+
+33)
+Create View report_prj_emp_total as
+(With temp as 
+(select prj.project_id, emp.emp_id, 
+sum((datediff(to_date,from_date))*amount_per_day) as total_amount_collected
+from t_project prj
+join allocation alo
+on alo.project_id = prj.project_id
+join employee emp
+on emp.emp_id=alo.emp_id 
+group by prj.project_id , emp.emp_id) 
+Select * from temp order by total_amount_collected desc)
+
+34)
+
+Create View report_empId_roleId_total_amount as 
+(select emp.emp_id, rol.role_id, 
+sum((to_date-from_date)*amount_per_day) as 'Total Amount Collected'
+from employee emp
+join allocation alo
+on alo.emp_id = emp.emp_id
+join role rol
+on rol.role_id=alo.role_id 
+group by emp.emp_id, rol.role_id)
+
+35)
+Create View report_emp_role_prj_total as (
+With temp as (
+select emp.emp_id,rol.role_id, prj.project_id, 
+ sum((datediff(to_date,from_date))*amount_per_day) as total_amount_collected 
+from employee emp join allocation alo on emp.emp_id=alo.emp_id 
+join role rol on rol.role_id=alo.role_id 
+join t_project prj on  alo.project_id = prj.project_id 
+group by prj.project_id ,rol.role_id, emp.emp_id) 
+select * from temp order by total_amount_collected desc)
+
+36)
+Create View report_emp_manager_presence as
+(SELECT  emp_id, mgr_id, 
+Case When mgr_id is null 
+Then 'No Manager' ELSE 'Has Manager' END as 'Comments' from employee
+group by emp_id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

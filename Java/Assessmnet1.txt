@@ -1,0 +1,25 @@
+1.Default Sorting should base on ID and additional Sorting by Creation Date field.
+2.Create user Defined Exception AppException. Handle Exception Wherever its required.
+3.Create a Complaint Class which as Id, description opened Date, close Date.
+4.Create an Account class which as Id, Name, Description, phone, billingAddress, email, creationDate
+5.Unload GOLD Member Details from Database table into File (Any format).
+6.Establish a Has-A-Relationship between Account and Complaint(i.e One Account can have many Complaints).
+7.Create basic CRUD operations Interface and its Implementation with database.
+8.Add a category Field to Account class, which should consist of following values only:
+  a. FREE
+  b. SILVER      
+  c. GOLD
+  d. DIAMOND
+
+9.Load Data from xlsx file into Data Base Accounts table.
+   a. Before loading data into database, check any null data and creation date should not be greater than today.
+   b. Log no of valid records loaded into database.
+10.In separate class create a map to store accounts which is loaded from DB where account id is key.
+ a. Fetch phone and email for specified account Detail from map.
+ b. Log no of records fetched from database.
+
+
+
+
+
+

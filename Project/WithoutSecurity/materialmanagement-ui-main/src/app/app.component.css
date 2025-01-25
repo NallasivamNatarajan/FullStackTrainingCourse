@@ -1,0 +1,126 @@
+.mat-sidenav{
+    
+    background-color: black;
+}
+
+.mat-nav-list{
+    width: 250px;
+}
+.mat-list-item{
+    color: white;
+}
+.mat-list-item.active{
+    background-color: rgb(231, 231, 80);
+}
+
+.mat-toolbar-row{
+    background-color: white;
+    color: black
+}
+
+
+.header{
+    color: white;
+}
+
+
+.menu-bar{
+    position: absolute;
+    right:0px;
+}
+.menu-icon{
+    margin:20px;
+    height: 20px;
+    width: 20px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   width:230px;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+
+  }
+  
+  /* Change the link color on hover */
+  /* li a:hover {
+    background-color: rgb(141, 141, 53);
+    color: white;
+  } */
+
+  .selected{
+    background-color: rgb(141, 141, 53);
+    border-radius: 9px;
+    color: white;
+}
+/* #closebtn{
+    position: absolute;
+    right: 10px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+} */
+
+/* .close-button{
+    color: white;
+    position: absolute;
+    background-color: black;
+    right: 10px;
+} */
+
+
+.row1{
+    height: 50px;
+     border: 1px inset rgb(235, 231, 231);    
+}
+.row2{
+height: 30px;
+border: 1px inset rgb(235, 231, 231);
+}
+.title{
+    color: white;
+    font-size: 13px;
+}
+
+.mat-accordion{
+    background-color: black;
+    width:250px;
+}
+.mat-expansion-panel{
+    background-color: black
+}
+
+.expand{
+    font-size: 12px;
+}
+
+.list{
+    font-size: 12px;
+    margin-left: 12px;
+  
+}
+
+.list-icon{
+    font-size: 15px;
+    color: white;
+}
+
+.list-main{
+    font-size: 15px;
+    color: white;
+}
+.side-main{
+    font-size: 13px;
+    margin-top: 12px;
+    color: white;
+}

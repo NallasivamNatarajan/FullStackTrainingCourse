@@ -1,0 +1,16 @@
+.event-participant{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.event-id{
+    border: 2px solid rgb(29, 26, 26);
+    width: 40%;
+    height: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+.child-component{
+    margin-top: 20px;
+}

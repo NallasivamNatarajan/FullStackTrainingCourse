@@ -1,0 +1,10 @@
+th{
+color: lightgray;
+width: 125px;
+}
+td{
+    /* word-break: keep-all; */
+}
+table{
+    width: 600px;
+}

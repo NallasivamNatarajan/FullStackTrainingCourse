@@ -1,0 +1,14 @@
+1) Write a core java program which can achieve has-a-relationship between College and Student. Prepare an interface to do CRUD operation on Student class. 
+ 
+       I. Store Student as map inside College class  where StudentId(Should be in ascending order) is key.
+       II. Facility to do basic CRUD operations for Student class as separate Interface Implementation class.
+
+2) Write a Candidate enrollment Module for HTC Global Service where candidate enroll to training course.
+       a) Read The Candidate Detail From Excel file and Load Into Database after validating Records
+                      Following Validation
+                                    i) Candidate Should have age from 21 and above as of today
+                                    ii) Candidate should have mail id with domain name "@htcindia.com" and mail id should contain only '.' Dot Symbol.
+                                      Example: <firstname.lastname>@htcindia.com valid
+                                        <firstname-lastname>@htcindia.com is invalid
+       b) Invalid Record should be stored InvalidDetails.xlsx
+       c) Unload candidate details from Database who is currently working in "Chennai" to excel file.

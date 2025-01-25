@@ -1,0 +1,160 @@
+.track{
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px
+}
+.track .step{
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -18px;
+    text-align: center;
+    position: relative
+}
+.track .step.active:before{
+    background: rgb(41, 131, 29)
+}
+.track .step::before{
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 18px
+}
+.track .step.active .icon{
+    background: rgb(41, 131, 29);
+    color: #fff
+}
+.track .icon{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd
+}
+.track .step.active .text{
+    font-weight: bold;
+    color: #000
+}
+.track .text{
+    display: block;
+    margin-top: 7px;
+    
+}
+
+.order-button{
+margin:0px;
+
+}
+
+th{
+    font-weight: 550;
+   padding: 16px
+}
+
+td{
+    padding: 16px;
+}
+
+.order-data-head{
+    background-color: rgb(207, 211, 219);
+    border-radius: 100px
+}
+.title{
+    font-weight: 550;
+    padding: 5px 0px 0px 10px;
+}
+
+.table-head{
+padding: 10px;
+font-weight: 550;
+
+
+}
+
+
+
+.data-head{
+    color: gray;
+ 
+}
+.container-table{
+    padding: 10px
+}
+
+.request-data{
+    position: relative;
+    left: -58px;
+
+}
+
+.back-link{
+    text-decoration: none;
+    color: #000;
+}
+
+.cancel{
+    position: absolute;
+    right: 500px;
+    border: 1px solid black;
+    
+}
+.cancel.active{
+    position: absolute;
+    border: 1px solid black;
+    
+}
+/** Progress Bar***/
+.circles{
+    height: 0.938em;
+    width: 0.938em;
+    border: 0.188em solid #000;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .active{
+      background-color:#ffa500;
+  }
+  
+  .circle-desc-active{
+  font-weight: bold;
+  }
+  
+  .bar{
+    width: 16%;
+    height: 0.063em;
+    margin-bottom:0.469em;
+    border: 0.031em solid #000;
+    color:#000;
+    background-color:#000;
+    display: inline-block;
+    text-align:center;
+    margin:"0 auto";
+  }
+  
+  .container-bar{
+    min-width:420px;
+    max-width: 100%;
+    margin: "0px auto";
+    text-align: center;
+  }
+  
+  .circle-desc{
+   position: absolute;
+   top:6.000em;
+   font-size: 1.125em;
+   width: auto;
+   max-width:9.375em;
+   margin-left:-0.750em;
+  }
+/***/  

@@ -1,0 +1,18 @@
+<br>
+<h1>Participants Registered</h1>
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Participant Name</th>
+            <th>Email</th>
+            <th>Event Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let participant of participants| eventCodeFilter : eventId ">
+            <td>{{participant.participantName}}</td>
+            <td>{{participant.email}}</td>
+            <td>{{participant.eventCode}}</td>
+        </tr>
+    </tbody>
+</table>

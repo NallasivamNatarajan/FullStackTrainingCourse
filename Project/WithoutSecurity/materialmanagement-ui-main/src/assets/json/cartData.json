@@ -1,0 +1,68 @@
+[
+  {
+      "productId": 1,
+      "productName": "Phillips Bit",
+      "category": "Accessories",
+      "type": "Main Line + Repair Spare",
+      "length": "100 mm",
+      "dia": "PH2",
+      "driveSize": "1/4 QC",
+      "partNumber": "GT710201903150001",
+      "quantity": 1
+  },
+  {
+      "productId": 2,
+      "productName": "Phillips Bit",
+      "category": "Accessories",
+      "type": "Main Line + Repair Spare",
+      "length": "100 mm",
+      "dia": "PH2",
+      "driveSize": "1/4 QC",
+      "partNumber": "GT710201903150001",
+      "quantity": 1
+  },
+  {
+      "productId": 3,
+      "productName": "phone",
+      "category": "Accessories",
+      "type": "Repair Miscellaneous Tools",
+      "length": "Plastic Type",
+      "dia": "-",
+      "driveSize": "-",
+      "partNumber": "GT710201902130008",
+      "quantity": 1
+  },
+  {
+      "productId": 4,
+      "productName": "Phillips Bit",
+      "category": "Accessories",
+      "type": "Main Line + Repair Spare",
+      "length": "100 mm",
+      "dia": "PH2",
+      "driveSize": "1/4 QC",
+      "partNumber": "GT710201903150001",
+      "quantity": 1
+  },
+  {
+      "productId": 5,
+      "productName": "phone",
+      "category": "Accessories",
+      "type": "Repair Miscellaneous Tools",
+      "length": "Plastic Type",
+      "dia": "-",
+      "driveSize": "-",
+      "partNumber": "GT710201902130008",
+      "quantity": 1
+  },
+  {
+      "productId": 6,
+      "productName": "Phillips Bit",
+      "category": "Accessories",
+      "type": "Main Line + Repair Spare",
+      "length": "100 mm",
+      "dia": "PH2",
+      "driveSize": "1/4 QC",
+      "partNumber": "GT710201903150001",
+      "quantity": 1
+  }
+]

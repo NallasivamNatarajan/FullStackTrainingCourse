@@ -1,0 +1,22 @@
+Tamaraikannan SpringBoot Mock Interview Questions..
+
+1) What are the advantage of SpringBoot over Spring?
+2) IOC and Dependency Injection?
+3) What are the components of Spring Boot?
+4) Spring Boot Starter and How it works?
+5) Work process of Spring boot application? starting from the main method / Expalin about @SpringBootApplication
+6) Types of Beans scope?
+7) Dependency Management?
+8) Spring Profiles?
+9) When we need to use @Qualifier?
+10) Cascading and its types with workflow.
+11) How to create Customised Exception and Handler?
+12) What is composite key and how to implement it in entity class?
+13) Spring Security process? Diff b/w Authentication and Authorization?
+14) JWT work flow how authentication done and where authorization method gives access.
+15) Spring Data Jpa, Spring Jpa
+16) Fetch Type -Eager and Lazy
+17) Relation mapping between entities
+18) How to fetch a value of an attribute from application.properties to Java class? explore about different ways of doing it
+19) How to implement security in springboot? explain about oAuth 2 in detail
+20) Explain @Autowired and Diff between @Component and @Bean

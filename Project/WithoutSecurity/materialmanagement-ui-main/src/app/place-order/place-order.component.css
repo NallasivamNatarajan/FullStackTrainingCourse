@@ -1,0 +1,46 @@
+.brand-text {
+  border-left: 2px solid black;
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.main-container header img {
+  margin-right: 10px;
+}
+.main-container{
+  margin-left: 10px;
+}
+.breadcrumb {
+  line-height: 20px;
+  padding: 10px 0;
+  background-color: white !important;
+  border-bottom: 1px solid silver;
+  }
+
+.placedInText {
+  font-weight: 500;
+}
+
+.placeOrders {
+  height: 73vh;
+  background-color: #f4f5f7;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+
+.form-control-feedback {
+  text-align: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.custom-checkbox {
+  top: 0;
+  margin-top: 15px;
+}
+
+.image-size {
+  height: 70px;
+}

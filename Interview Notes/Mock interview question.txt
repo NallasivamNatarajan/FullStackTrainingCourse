@@ -1,0 +1,143 @@
+Nallasivam
+----------------
+2. Wt r the features u know in java8?
+3. Wt is lambda expression?How it is used?
+4. Wt is functional programming?
+5. Wt is stream api?How it is used?
+6. Store the collection of namelist and get the collection of name who's length is less than 5.
+7. Store the list as map
+8. Wt is default method?
+A interface -> print()
+B interface -> print()
+
+class A
+class B
+class C 
+
+9. How hashmap work internally?
+
+1. What is platform independent? How java not dependent on OS?
+2. What is class loader?
+3. How string work internally?
+4. Exception handling. Types of exception
+5. Transient
+6. Multithreading
+
+Satheesh
+-----------
+1. Wt is the version of java u used?
+2. Explain abt optional.
+3. Wt is functional interface?
+4. Why the introduced static and default method?
+5. Wt is immutable in java?
+6. How hashset internal work?
+7. Wt is comparable and comparator interface?
+
+1. Wt is lamba expression?
+2. Diff. btwn interface and abstract class.
+3. Can we create object for abstract class?
+4. Can we over-ride static method?
+5. Wt is iterator and enumerator?
+6. Transient.
+7. Wt is the purpose of TreeMap? As a developer when will you select TreeMap.
+8. Wt is the purpose of TreeSet?
+9. Explain abt NullPointerException.
+10. Wt are the Object class methods?
+11. How many way to create an object for class?
+
+We can proceed SQL/Angular
+
+Priyanka Murugaiyan
+---------------------------
+1. How hashmap work internally?
+2. Wt happen if hashcode and equal are not override?
+3. How you will handle exception?
+4. Wt kind of exception we have?
+5. Wt is checked and unchecked exception?
+6. Arraylist with names. Find how many names are greater than 5 character
+
+1. sort the output of 6th question in decending order.
+2. Diff btwn arraylist and linkedlist -> AL=> searching LL => Manipulation
+3. Diff btwn hashmap and hashset, treeset
+4. Wt is concurrenthashmap?
+5. Wt is the meaning of concurrentmodificationexception? Create an application and handle concurrenthashmap.
+6. How to eliminate duplicate in list?
+7. How to count the no. of time name in a list?
+
+Priyanka Mani
+------------------
+1. DateTime
+2. Optional Class
+3. Static and default method
+4. Terminal and intermediate function
+5. Wt is singleton?
+6. Wt is immutable?
+7. List of name. Find how many names are startswith 'P'.
+8. StringOutOfBoundException
+9. Concatenate
+
+Siva karthik
+---------------
+1. which version of java used
+2. what are the topics/concepts u have used.
+3. what are the features in java 8
+4. what is the use lambda expression
+5. Convert ArrayList into threadsafe
+6. Write a pgm to count 
+No. of duplicate key
+7. Overloading and overridding
+8. How many ways you can initialize the class?
+9. Wt is constructor and type of constructor?
+10. Wt is concurrenthashmap?Internal working 
+11. Fail Fast and Fail Safe Iterators in Java
+
+1. How Hashmap work internally?
+2. Methods avaliable in Object class.
+3. Wt is immutable?
+4. Diff. btwn arraylist and linkedlist.
+5. When to use arraylist and when to use linkedlist?
+6. Wt is stringbuffer and stringbuilder?
+7. As a developer when you will use HashMap, ConcurrentHashMap and TreeMap.
+8. Wt abt treeset?
+9. Wt is the use of throws and throw?
+10. Print the string in reverse
+
+Roopendra
+--------------
+2. Technology known - Java, Spring and SpringBoot
+3. Java8 features
+4. How method reference work?
+5. Functional programming
+6. Create a list with names and list the name start with a and print in uppercase
+7. Wt is StringBuffer and StringBuilder?
+8. How you will handle exception in java?
+9. Is it possible to create try block without catch block?
+
+Narahari
+-----------
+1. Functional Interface, Lambda, Streams
+2. Wt is the meaning of Lambda? 
+3. Create an Employee list object(id,name,age)
+4. How hashmap work internally?
+5. Wt is the diff. btwn map and set?
+6. As a developer when will you select HashMap and HashSet?
+7. In which scenario you will go for HashMap, LinkedHashMap and ConcurrentHashMap.
+8. Wt is the purpose of TreeMap?
+9. Wt is LinkedHashMap?
+10. How JVM and JRE?
+11. Wt is class loader?
+12. Java is platform independant/dependent?
+
+1. Singleton
+2. ArrayIndexOutOfBoundException
+
+
+Nivedhitha
+--------------
+
+2. Features in Java8
+3.Using streams find sum values of list holding integer values
+4. Create a list with String and find the string startswith "s" and store it in new list.
+5. Diff btwn arraylist and linkedlist.
+6. How u will handle exception in java?
+

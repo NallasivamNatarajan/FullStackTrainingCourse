@@ -1,0 +1,77 @@
+<h1>
+    <strong>{{title}}</strong>
+</h1>
+<div class="reactive-form">
+    <form [formGroup]="eventReactiveForm" (ngSubmit)="onSubmit()">
+
+<!-- 
+        <ngx-dropzone (change)="onSelect($event)">
+            <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+              <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+            </ngx-dropzone-preview>
+          </ngx-dropzone> -->
+
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" name="productName" class="form-control" style="width: 60%" formControlName="productName">
+        </div><br>
+
+        <div style="display: flex;">
+        <div class="form-group">
+            <label>Category</label>
+            <select name="category" class="form-select" style="width: 300px" formControlName="category" >
+                <option [value]="category" *ngFor="let category of categoryList">{{category}}</option>
+            </select>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        <div class="form-group">
+            <label>Type</label>
+            <select name="type" class="form-select" style="width: 300px" formControlName="type" >
+                <option [value]="type" *ngFor="let type of typeList">{{type}}</option>
+            </select>
+        </div></div><br>
+
+        <div style="display: flex">
+        <div class="form-group">
+            <label>Length</label>
+            <input type="number" name="length" class="form-control" style="width: 300px" formControlName="length" >
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="form-group">
+            <label>Dia (mm)</label>
+            <input type="number" name="dia" class="form-control" style="width: 300px" formControlName="dia" >
+        </div></div><br>
+
+        <div class="form-group">
+            <label>Drive Size</label>
+            <input type="number" name="driveSize" class="form-control" formControlName="driveSize" >
+        </div><br>
+
+        <div style="display: flex;">
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" name="quantity" class="form-control" style="width: 300px" formControlName="quantity" >
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="form-group">
+            <label>Volume in</label>
+            <select name="type" class="form-select" style="width: 300px" formControlName="volumeIn" >
+                <option [value]="metrics" *ngFor="let metrics of metricsList">{{metrics}}</option>
+            </select>
+        </div></div><br>
+
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" style="width: 60%" class="form-control" formControlName="description" ></textarea>
+        </div><br>
+        
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Add</button>&nbsp;
+            <!-- [disabled]=eventReactiveForm.invalid> -->
+               
+        </div>
+    </form>
+</div>

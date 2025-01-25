@@ -1,0 +1,84 @@
+node -v
+npm -v
+
+npm config set proxy http://nallasivam.natarajan:Ns!vam.12@96@10.1.9.65:8080
+npm config set http-proxy http://nallasivam.natarajan:Ns!vam.12@96@10.1.9.65:8080
+npm config set https-proxy=http://nallasivam.natarajan:Ns!vam.12@96@10.1.9.65:8080
+
+npm install -g @angular/cli@11.0.0
+ng --version
+
+192.168.201.91
+
+npm config set proxy http://nallasivam.natarajan:Ns!vam.12@96@192.168.201.91:8080
+npm config set http-proxy http://nallasivam.natarajan:Ns!vam.12@192.168.201.91:8080
+npm config set https-proxy=http://nallasivam.natarajan:Ns!vam.12@96@192.168.201.91:8080
+
+npm config rm proxy
+npm config rm https-proxy
+npm config --global rm proxy
+npm config --global rm https-proxy
+
+
+
+Basic Og==
+
+Angular commands:
+npm install -g @angular/cli
+ng help
+ng generate --help
+ng new my-first-project
+cd my-first-project                #to change directory
+ng serve                         #to build the app (later manually specify localhost//portnum to run app)
+ng serve -o                      #to build and run app in browser
+ng g c componentname             #to generate component file  
+ng g cl classname                #to generate class file  
+ng g pipe pipename                #to generate pipe file  
+ng g directive directivename     #to generate directive file
+npm install bootstrap
+npm install jquery
+npm install angular-material --save  # to install angular material
+ng add @angular/material        #to update angular material and other features like icons
+
+
+
+
+[13:50] Siva Karthik Madaparthi
+mat-list-item{
+    border: 1px solid rgb(237, 232, 232);
+}
+
+[13:50] Siva Karthik Madaparthi
+mat-icon{
+    padding: 0px 15px 5px 0px;
+}
+
+[13:57] Siva Karthik Madaparthi
+<div class="menu-bar">
+      <a mat-button><mat-icon>person</mat-icon></a>
+      <span>Welcome {{user}}</span>&nbsp;
+     <a mat-button><mat-icon>exit_to_app</mat-icon></a></div>
+
+[13:57] Siva Karthik Madaparthi
+.menu-bar{
+    position: absolute;
+   right: 0;
+}
+
+[13:58] Siva Karthik Madaparthi
+user !:string;
+  constructor(){
+    this.user="siva";
+  }
+
+
+Step 1 – Create and Setup Angular Project
+Step 2 – Create JSON File in Assets Folder
+Step 3 – Install & Config Bootstrap
+Step 4 – Import Employees JSON & Create Interface
+Step 5 – Create Table with Bootstrap Style
+Step 6 – Update Compiler Options in TS Config
+Step 7 – Run Angular App
+
+
+ Aspects : cross cutting concerns

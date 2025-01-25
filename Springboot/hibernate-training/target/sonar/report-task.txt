@@ -1,0 +1,6 @@
+projectKey=Hibernatate-training
+serverUrl=http://172.16.51.43:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://172.16.51.43:9000/dashboard?id=Hibernatate-training
+ceTaskId=AYLuX_c9GLIh_FTDbsYt
+ceTaskUrl=http://172.16.51.43:9000/api/ce/task?id=AYLuX_c9GLIh_FTDbsYt
