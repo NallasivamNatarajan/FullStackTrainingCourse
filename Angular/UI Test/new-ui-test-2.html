@@ -1,0 +1,436 @@
+<html>
+
+<head>
+    <title>
+        UI Training
+    </title>
+    <style>
+        .menu-bar {
+            height: 70px;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            /* box-shadow: 0px 2px 2px 2px; */
+        }
+
+        .logo-bar {
+            display: flex;
+            list-style: none;
+            margin-left: 0px;
+        }
+
+        .menu-info-bars {
+            display: flex;
+            list-style: none;
+            margin-left: 600px;
+
+        }
+
+        .logo-bar li {
+            margin: 0px;
+            padding: 5px;
+
+        }
+
+        .menu-info-bars li {
+
+            padding: 10px;
+            margin: 0px;
+        }
+
+        /*  Banner Class */
+
+        .banner-class {
+            position: relative;
+            margin-top: 1px;
+        }
+
+        .bannerText {
+            color: rgb(20, 19, 19);
+            font-weight: 300;
+            text-align: center;
+            margin-top: -110px;
+            margin-left: -120px;
+        }
+
+        /* category offer */
+
+        .category-offer {
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 43%;
+            height: 11%;
+            width: 13%;
+            background-color: rgb(56, 192, 192);
+        }
+
+        /* category images */
+
+        .category-images {
+            display: flex;
+            margin-top: 75px;
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+
+        .category-images .beauty-image,
+        .supplement-image,
+        .fitness-image {
+            padding: 15px 15px;
+        }
+
+        .beauty-text,
+        .supplement-text,
+        .fitness-text {
+            margin-top: -130px;
+            margin-left: 0px;
+            background-color: #ffffff;
+            opacity: 0.6;
+            text-align: left;
+            height: 105px;
+            padding: 14px;
+        }
+
+
+        /* employee info */
+
+        .employee {
+            display: flex;
+            width: 100%;
+            height: 75%;
+
+        }
+
+        .employee-image {
+            background-color: rgb(56, 192, 192);
+            padding: 15px 15px;
+            width: 25%;
+            height: 350px;
+            justify-content: center;
+        }
+
+        .employee-image .employee-text {
+            text-align: left;
+            color: white;
+            margin-top: 0px;
+            margin-left: 76px;
+        }
+
+        .employee .employee-form {
+            background-color: grey;
+            padding: 15px 15px;
+            width: 70%;
+            margin-left: 10px;
+            display: flex;
+            color: white;
+            height: 350px;
+        }
+
+        .employee-form .employee-detail1 {
+            margin-top: 10px;
+            margin-left: 10px;
+            float: left;
+            padding: 50px;
+        }
+
+        .employee-form .employee-detail2 {
+            margin-top: 10px;
+            margin-left: 10px;
+            float: left;
+            padding: 50px;
+        }
+
+        .employee-detail2 .employee-action {
+            margin-left: 80px;
+
+        }
+
+        .employee-info {
+            width: 100%;
+            height: 300px;
+            padding: 10px 10px;
+
+        }
+
+        .emp-table {
+            margin-top: 45px;
+            margin-left: 80px;
+            width: 75%;
+            height: 230px;
+            padding: 10px 10px;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .emp-table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        .emp-table-head{
+            background-color: white;
+        }
+        .emp-info-text {
+            color: rgb(56, 192, 192);
+            float: left;
+            margin-top: 0px;
+            margin-left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="menu-bar">
+        <ul class="logo-bar">
+            <li>
+                <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/logo.png" style="height: 30px;width: 30px; margin-inline-start:-15px;margin-top: 0px"
+                    alt="Internet Logo">
+            </li>
+            <li>
+                <p style="margin-top: 2px;margin-left: 5px; font-size: 20px">
+                    <strong>Company Logo</strong>
+                </p>
+            </li>
+        </ul>
+        <ul class="menu-info-bars">
+            <li>
+                <span style="color: rgb(56, 192, 192)">Home</span>
+            </li>
+            <li>How It Works</li>
+            <li>FAQ</li>
+            <li>About us</li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+    <div class="banner-class">
+        <img src="Banner.jpg" alt="Banner" style="width:100%;height:25%;">
+        <h2 class="bannerText">
+            <Span style="color: rgb(56, 192, 192)">Company</span> is an innovative e-commerce platform designed for re-
+            <br> tailers and pharmacies across the US to purchase unique gifts and
+            <br> merchandise for the front-end of the pharmacy.</h2>
+    </div>
+    <div class="category-offer">
+        <p style="color: white; font-weight: bold; text-align: center">Category</p>
+        <p style="color: white; text-align: center; margin-top: -11px;">with great offers</p>
+    </div>
+    <br>
+    <div class="category-images">
+        <div class="beauty-image">
+            <img src="Beauty.jpg" alt="Beauty" style="width:100%;">
+            <div class="beauty-text">
+                <p>
+                    <i>All Natural Non Toxic</i>
+                </p>
+                <p>
+                    <strong>Best of Beauty</strong>
+                </p>
+                <button>
+                    <strong>Shop Now</strong>
+                </button>
+            </div>
+        </div>
+        <div class="supplement-image">
+            <img src="Supplements.jpg" alt="Supplements" style="width:100%;">
+            <div class="supplement-text">
+                <p>
+                    <i>Best Deals For</i>
+                </p>
+                <p>
+                    <strong>Supplements & Vitamins</strong>
+                </p>
+                <button>
+                    <strong>Shop Now</strong>
+                </button>
+            </div>
+        </div>
+        <div class="fitness-image">
+            <img src="Fitness.jpg" alt="Fitness" style="width:100%;">
+            <div class="fitness-text">
+                <p>
+                    <i>Everyday Savings on</i>
+                </p>
+                <p>
+                    <strong>Fitness & Nutritions</strong>
+                </p>
+                <button>
+                    <strong>Shop Now</strong>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="employee">
+        <div class="employee-image">
+            <div class="employee-text">
+                <h1>
+                    <strong>Employee</strong>
+                </h1>
+                <p style="font-size: 13pt; margin-top: -10px">Information</p>
+            </div>
+            <img style="padding: 10px 72px; width:150px;height:150px;" src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Employee.png"
+                alt="Employee Image">
+        </div>
+        <div class="employee-form">
+            <div class="employee-detail1">
+                <form class="empform">
+                    <label for="fname">Full name*</label>
+                    <br>
+                    <input type="text" id="fname" name="fname" placeholder="Type your name">
+                    <br>
+                    <br>
+                    <label for="gender">Gender</label>
+                    <br>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <br>
+                    <br>
+                    <label for="mobile">Mobile *:</label>
+                    <br>
+                    <input type="text" id="mobile" name="mobile" placeholder="Mobile number">
+                    <br>
+                    <br>
+                    <label for="education">Educational Qualification</label>
+                    <br>
+                    <input type="text" id="education" name="mobile" placeholder="Type your Qualification ">
+                    <br>
+                    <br>
+                    <label for="cars">State</label>
+                    <br>
+                    <select name="state" id="state">
+                        <option value="andhrapradesh">Andhra Pradesh</option>
+                        <option value="tamilnadu">TamilNadu</option>
+                        <option value="uttarpradesh">UttarPradesh</option>
+                        <option value="others">Others</option>
+                    </select>
+                </form>
+            </div>
+            <div class="employee-detail2">
+                <div class="employee-detail2-form">
+                    <form class="empform">
+                        <label for="address">Address</label>
+                        <br>
+                        <textarea id="address" name="address" rows="4" cols="50" placeholder="Type your address">
+                            </textarea>
+                        <br>
+                        <br>
+                        <label for="language">Languages Known</label>
+                        <br>
+                        <input type="checkbox" id="l1" name="l1" value="english">
+                        <label for="english"> English</label>
+                        <input type="checkbox" id="l2" name="l2" value="tamil">
+                        <label for="tamil"> Tamil</label>
+                        <input type="checkbox" id="l3" name="l3" value="telugu">
+                        <label for="telugu"> Telugu</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" id="l4" name="l4" value="hindi">
+                        <label for="hindi"> Hindi</label>
+                        <input type="checkbox" id="l5" name="l5" value="malayalam">
+                        <label for="malayalam"> Malayalam</label>
+                </div>
+                <br>
+                <br>
+                <div class="employee-action">
+                    <button type="button">Reset</button>
+                    <input type="submit">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="employee-info">
+        <h3 class="emp-info-text">Employee Details</h3>
+        <table class="emp-table">
+            <thead class="emp-table-head">
+                <td><bold>S.NO</bold></td>
+                <td><bold>Name</bold></td>
+                <td><bold>Gender</bold></td>
+                <td><bold>Education</bold></td>
+                <td><bold>Address</bold></td>
+                <td><bold>Language Known</bold></td>
+                <td><bold>Address</bold></td>
+            </thead>
+            <tr>
+                <td>1</td>
+                <td>Thara</td>
+                <td>Female</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>English,Tamil</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John</td>
+                <td>Male</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>English,Tamil</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Smith</td>
+                <td>Male</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>Tamil</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Eswar</td>
+                <td>Male</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>English,Tamil</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>David</td>
+                <td>Male</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>English,Hindi</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Kumar</td>
+                <td>Male</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>English,Tamil</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Maaran</td>
+                <td>Male</td>
+                <td>B.E</td>
+                <td>#11 GST road Guindy,Chennai,Tamilnadu</td>
+                <td>Hindi</td>
+                <td>
+                    <img src="C:/Users/nallasivam.natarajan/Downloads/Q2 Images/UI Test/1x/Delete.png" alt="delete image">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

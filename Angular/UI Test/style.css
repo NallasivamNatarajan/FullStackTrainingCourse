@@ -1,0 +1,164 @@
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.content-wrapper {
+	display: inline-block;
+	width: 70%;
+	margin: 0 auto;
+	padding: 25px 20px;
+	
+}
+
+.head{
+	background: white;
+	padding:5px 20px;
+	color:#030911;
+    display: flex;
+    box-shadow: 0 0 2px 2px #ddd;
+    }
+
+    .menu{
+        list-style: none;
+            display: flex;
+            margin-left: 513px;
+    }
+    
+    .menu li {
+        padding:5px;
+        margin:5px;
+    }
+
+    .active{
+
+        color:rgb(56, 192, 192);
+    }
+/*banner*/
+    
+.box{
+padding-top:2px;
+}
+
+.bannerText{
+    color: rgb(20, 19, 19);
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    
+    top: 150px;
+    
+    left: 150px;
+    
+    text-align: center;
+    
+    }
+/*square*/
+.square {
+       position: absolute;
+       top:400px;
+        left: 47%;
+        height: 13%;
+        width: 15%;
+        background-color: rgb(56, 192, 192);
+}
+.square-head{
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    /* padding: 2px; */
+}
+
+.square-body{
+    color: #fff;
+    text-align: center;
+}
+/*card wrapper*/
+.card-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+	
+	
+}
+
+.card-wrapper .card {
+	padding: 20px 25px;
+	background: #fff;
+	
+	float: left;
+	width: 22%;
+	margin: 10px;
+	text-align:center;
+	/* background:#efefef; */
+}
+
+/*employee wrapper*/
+.employee-wrapper{
+	display:flex;
+	background:white;
+	margin-top:50px;
+}
+.employee-card{
+    background: rgb(56, 192, 192);
+}
+.img1{
+		max-width:500px;
+		padding:30px;
+}
+
+.employee-form{
+    background: gray;
+	padding-left:10px;
+    margin-left: 15px;
+    height: 400px;
+    display: flex;
+    color: white;
+    
+}
+.part{
+    float: left;
+    padding: 50px;
+}
+
+.para{
+	color:white;
+	margin-right:20px;
+    font-size:15px;
+    text-align: center;
+}
+.heading{
+    color:white;
+    text-align: center;
+}
+
+/*EMployee details*/
+
+table {
+    
+    width: 70%;
+    position: absolute;
+    left: 150px;
+  }
+  
+  th{
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+
+  }
+ td {
+    text-align: left;
+    padding: 8px;
+  }
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  
+  }
+#emp-head{
+    color: rgb(56, 192, 192);
+    margin-left: 150px;
+}
+
+/*footer*/
